@@ -298,6 +298,43 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
 .addon strong{color:var(--paper)}
 .addon-amt{font-family:'Anton',Impact,sans-serif;font-size:2rem;color:var(--cyan);line-height:1}
 
+
+/* ---------- where your payment goes ---------- */
+.spend{border:1px solid var(--line);border-left:3px solid var(--amber);
+       padding:var(--s4) var(--s3);margin-top:var(--s4)}
+.spend h3{font-size:1.5rem;margin-bottom:var(--s2);line-height:1.1}
+.spend h4{font-size:1.15rem;margin:var(--s4) 0 var(--s2);line-height:1.15}
+.spend > p{font-size:14px;color:var(--paper-dim);line-height:1.75;max-width:60ch}
+.spend > p b{color:var(--paper)}
+.spend-rows{margin-top:var(--s3)}
+.spend-row{
+  display:grid;grid-template-columns:96px 1fr;gap:var(--s3);
+  padding:11px 0;border-bottom:1px solid var(--line);align-items:baseline;
+}
+.spend-row span:last-child{font-size:13.5px;color:var(--paper-dim);line-height:1.6}
+.spend-amt{font-family:'Anton',Impact,sans-serif;font-size:1.3rem;color:var(--amber);
+           white-space:nowrap;line-height:1.2}
+.spend-row.total{border-bottom:0;border-top:2px solid var(--paper);margin-top:6px;padding-top:15px}
+.spend-row.total .spend-amt{color:var(--paper)}
+.spend-row.total span:last-child{color:var(--paper);font-weight:700;text-transform:uppercase;
+  font-size:11.5px;letter-spacing:.12em}
+.ladder{margin-top:var(--s3);border-top:1px solid var(--line)}
+.lad{
+  display:grid;grid-template-columns:1fr 82px 108px;gap:var(--s2);
+  padding:11px 0;border-bottom:1px solid var(--line);align-items:baseline;
+  font-size:13.5px;color:var(--paper-dim);line-height:1.6;
+}
+.lad .pay{font-family:'Anton',Impact,sans-serif;font-size:1.05rem;color:var(--paper);
+          white-space:nowrap;text-align:right}
+.lad .off{color:var(--cyan);font-weight:700;white-space:nowrap;text-align:right;font-size:12.5px}
+.lad strong{color:var(--paper)}
+@media(max-width:600px){
+  .spend-row{grid-template-columns:80px 1fr;gap:var(--s2)}
+  .lad{grid-template-columns:1fr auto;row-gap:2px}
+  .lad .pay{grid-column:2;text-align:right}
+  .lad .off{grid-column:1/-1;text-align:left}
+}
+
 /* ---------- faq ---------- */
 details{border-bottom:1px solid var(--line)}
 summary{
@@ -305,6 +342,7 @@ summary{
   display:flex;justify-content:space-between;gap:var(--s2);align-items:flex-start;
   padding:var(--s2) 0;
 }
+summary > .q{flex:1;min-width:0}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";color:var(--amber);font-size:20px;flex-shrink:0;line-height:1.2}
 details[open] summary::after{content:"–"}
@@ -568,8 +606,30 @@ footer a{color:var(--amber)}
       </div>
     </div>
 
-    <div class="math">
-      <p><b>The honest math:</b> ₱999 <span class="nb">all-in</span> is the cheapest, pero until Aug 15 ra na. After that the <span class="nb">one-time</span> rate is gone and it's downpayment plus balance — ₱1,000 if you settle by Aug 15, ₱1,100 by Aug 31, ₱1,200 by Sept 12. Every deadline you pass adds ₱100. Kung kaya nimo ang ₱999 karon, kuhaa na sa dili pa <span class="nb">ma-Aug</span>&nbsp;15.</p>
+    <div class="spend">
+      <h3>Where your payment&nbsp;goes</h3>
+      <p>Budgeted at 50 joiners, the real cost per person is <b>₱1,180</b>:</p>
+
+      <div class="spend-rows">
+        <div class="spend-row"><span class="spend-amt">₱510</span><span>The resort — booked exclusively for us, 3PM to&nbsp;11AM</span></div>
+        <div class="spend-row"><span class="spend-amt">₱430</span><span>Your food — dinner, breakfast, and&nbsp;pulutan</span></div>
+        <div class="spend-row"><span class="spend-amt">₱100</span><span>Tagay</span></div>
+        <div class="spend-row"><span class="spend-amt">₱100</span><span>Game prizes and&nbsp;utensils</span></div>
+        <div class="spend-row"><span class="spend-amt">₱40</span><span>Your anniversary&nbsp;pin</span></div>
+        <div class="spend-row total"><span class="spend-amt">₱1,180</span><span>Real cost per&nbsp;person</span></div>
+      </div>
+
+      <h4>So why is it&nbsp;₱999?</h4>
+      <p>Kay ang sayo nga bayad mao'y makatabang — it lets us lock the venue and buy in bulk. Mao nga ang sayo, mas&nbsp;barato:</p>
+
+      <div class="ladder">
+        <div class="lad"><span>By <strong>Aug 15</strong> — <span class="nb">one-time</span></span><span class="pay">₱999</span><span class="off">₱181 off</span></div>
+        <div class="lad"><span>By <strong>Aug 15</strong> — installment</span><span class="pay">₱1,000</span><span class="off">₱180 off</span></div>
+        <div class="lad"><span>By <strong>Aug 31</strong></span><span class="pay">₱1,100</span><span class="off">₱80 off</span></div>
+        <div class="lad"><span>By <strong>Sept 12</strong></span><span class="pay">₱1,200</span><span class="off">full cost</span></div>
+      </div>
+
+      <p style="margin-top:var(--s3)">Basta sayo ka mobayad, mas barato&nbsp;jud.</p>
     </div>
 
     <div class="addon">
@@ -597,43 +657,43 @@ footer a{color:var(--amber)}
     </div>
     <div>
       <details>
-        <summary>How many people are&nbsp;joining?</summary>
+        <summary><span class="q">How many people are&nbsp;joining?</span></summary>
         <p>The target is 50+ joiners — the biggest event nato so far. The venue has a limit, so mas maayo kung sayo ka&nbsp;<span class="nb">mo-reserve</span>.</p>
       </details>
       <details>
-        <summary>Where exactly is the&nbsp;venue?</summary>
+        <summary><span class="q">Where exactly is the&nbsp;venue?</span></summary>
         <p>An exclusive resort in <span class="nb">Lapu-Lapu</span> City, Cebu. The exact location goes to confirmed participants lang since it's a private booking — kita ra jud tanan&nbsp;didto.</p>
       </details>
       <details>
-        <summary>Is transportation&nbsp;included?</summary>
+        <summary><span class="q">Is transportation&nbsp;included?</span></summary>
         <p>No, you handle your own trip. But we'll send complete directions once you're confirmed, so you won't get&nbsp;lost.</p>
       </details>
       <details>
-        <summary>What should I&nbsp;bring?</summary>
+        <summary><span class="q">What should I&nbsp;bring?</span></summary>
         <p>Towel, toiletries, swimwear, extra clothes, and your personal stuff. If you're not getting a bed, bring your own sleeping gear&nbsp;pod.</p>
       </details>
       <details>
-        <summary>What about food and&nbsp;drinks?</summary>
+        <summary><span class="q">What about food and&nbsp;drinks?</span></summary>
         <p>Dinner, breakfast, tagay and pulutan are all included. Walay dugang bayad once you're&nbsp;there.</p>
       </details>
       <details>
-        <summary>Where do I sleep without a&nbsp;bed?</summary>
+        <summary><span class="q">Where do I sleep without a&nbsp;bed?</span></summary>
         <p>The sala sofas are open for everyone, or you can set up your own banig, sleeping bag, or tent. 20 ra ang beds&nbsp;(+₱500).</p>
       </details>
       <details>
-        <summary>Do I have to stay the whole&nbsp;time?</summary>
+        <summary><span class="q">Do I have to stay the whole&nbsp;time?</span></summary>
         <p>Dili. <span class="nb">Check-in</span> is 3PM and checkout is 11AM, pero you can arrive later or leave earlier. Ikaw&nbsp;bahala.</p>
       </details>
       <details>
-        <summary>What if I don't&nbsp;drink?</summary>
+        <summary><span class="q">What if I don't&nbsp;drink?</span></summary>
         <p>Okay ra kaayo, and more common than you'd think. Tagay is optional — ang chikahan man gyud ang&nbsp;main.</p>
       </details>
       <details>
-        <summary>Can I get a&nbsp;refund?</summary>
+        <summary><span class="q">Can I get a&nbsp;refund?</span></summary>
         <p>Walay refund, pero it's transferable. Kung dili ka makaadto, pass your slot to someone else and let us know kung&nbsp;kinsa.</p>
       </details>
       <details>
-        <summary>First time nako <span class="nb">mo-join</span>. Kulbaan ko — normal&nbsp;ba?</summary>
+        <summary><span class="q">First time nako <span class="nb">mo-join</span>. Kulbaan ko — normal&nbsp;ba?</span></summary>
         <p>Normal kaayo. Most people who come are <span class="nb">first-timers</span> pod, and it usually goes away by dinner. The <a href="#safe" style="color:var(--cyan)">house rules</a> are enforced and organizers are around all night — you won't be on your&nbsp;own.</p>
       </details>
     </div>
