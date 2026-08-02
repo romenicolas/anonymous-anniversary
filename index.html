@@ -56,6 +56,7 @@ p,li,dd,summary,figcaption,.sec-intro,.body-copy p,.cell p,.slot-d,.rule p,
 details p,.note-line,.math p,.addon p,.cta-note,.total,.stat span{text-wrap:pretty}
 body{hyphens:none;-webkit-hyphens:none;overflow-wrap:normal;word-break:normal}
 .slot-time,.amt,.addon-amt,.stat b{white-space:nowrap}
+.nb{white-space:nowrap} /* keeps hyphenated words from splitting mid-word */
 a{color:inherit}
 img{max-width:100%}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
@@ -192,6 +193,28 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
 .stat b{display:block;font-family:'Anton',Impact,sans-serif;font-size:2.2rem;color:var(--amber);line-height:1;margin-bottom:8px}
 .stat span{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim);line-height:1.5}
 
+
+/* ---------- testimonials ---------- */
+.quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s3);align-items:start}
+@media(max-width:820px){.quotes{grid-template-columns:1fr;gap:var(--s4)}}
+.quote{
+  border:1px solid var(--line);border-top:2px solid var(--amber);
+  padding:var(--s4) var(--s3) var(--s3);position:relative;background:#0d0c0b;
+}
+.quote::before{
+  content:"\201C";position:absolute;top:-6px;left:var(--s3);
+  font-family:'Anton',Impact,sans-serif;font-size:4.5rem;color:var(--amber);
+  opacity:.22;line-height:1;pointer-events:none;
+}
+.quote blockquote{margin:0;font-size:14.5px;line-height:1.85;color:var(--paper)}
+.quote blockquote p + p{margin-top:var(--s2)}
+.quote figcaption{
+  margin-top:var(--s3);padding-top:var(--s2);border-top:1px solid var(--line);
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--paper-dim);font-weight:700;line-height:1.6;
+}
+.quote figcaption b{color:var(--cyan);font-weight:700}
+
 /* ---------- 3x3 includes grid ---------- */
 .grid{
   display:grid;grid-template-columns:repeat(3,1fr);
@@ -308,23 +331,23 @@ footer a{color:var(--amber)}
       <span class="out">Anniversary</span>
       <span class="hl">Adventure</span>
     </h1>
-    <p class="hero-sub">An overnight barkada outing at an exclusive resort — <b>kita ra tanan, bai.</b> One year of Anonymous Cebu, and this is the biggest event nato so far. Bring your barkada, or come solo. Okay ra jud both.</p>
+    <p class="hero-sub">An overnight barkada outing at an exclusive resort — <b>kita ra tanan, bai.</b> One year of Anonymous Cebu, and this is the biggest event nato so far. Bring your barkada, or come solo. Okay ra jud&nbsp;both.</p>
 
     <dl class="facts">
-      <div class="fact"><dt>When</dt><dd>Sat–Sun<br>Sept 12–13, 2026</dd></div>
+      <div class="fact"><dt>When</dt><dd>Sat–Sun<br>Sept 12–13,&nbsp;2026</dd></div>
       <div class="fact"><dt>Hours</dt><dd>Sat 3PM →<br>Sun 11AM</dd></div>
-      <div class="fact"><dt>Where</dt><dd>Exclusive Resort<br>Lapu-Lapu, Cebu</dd></div>
+      <div class="fact"><dt>Where</dt><dd>Exclusive Resort<br><span class="nb">Lapu-Lapu</span>,&nbsp;Cebu</dd></div>
       <div class="fact"><dt>Target</dt><dd>50+ Joiners</dd></div>
     </dl>
 
     <a class="cta" href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">Apil Ko →</a>
-    <p class="cta-note">₱999 all-in until Aug 15, or ₱300 downpayment lang to hold your slot today.</p>
+    <p class="cta-note">₱999 <span class="nb">all-in</span> until Aug 15, or ₱300 downpayment lang to hold your slot&nbsp;today.</p>
   </div>
 </header>
 
 <figure class="banner">
   <img src="img/venue-pool.jpg" width="1500" height="787" alt="The resort pool with the main house behind it, shot on a clear day.">
-  <figcaption>The venue · Lapu-Lapu City, Cebu</figcaption>
+  <figcaption>The venue · <span class="nb">Lapu-Lapu</span> City,&nbsp;Cebu</figcaption>
 </figure>
 
 <div class="marquee" aria-hidden="true">
@@ -337,23 +360,23 @@ footer a{color:var(--amber)}
 <!-- ============ INCLUDES (3x3) ============ -->
 <section id="includes">
   <div class="wrap">
-    <p class="label"><span class="num">01</span> What's included</p>
+    <p class="label"><span class="num">01</span> What's&nbsp;included</p>
     <h2 class="sec-title">Everything's covered.</h2>
-    <p class="sec-intro">One payment, one night. Walay dugang bayad once you're there.</p>
+    <p class="sec-intro">One payment, one night. Walay dugang bayad once you're&nbsp;there.</p>
 
     <div class="grid">
-      <div class="cell"><span class="idx">01</span><h3>Pool Party</h3><p>The whole pool is ours all night. Walay laing guests.</p></div>
-      <div class="cell"><span class="idx">02</span><h3>Karaoke</h3><p>Sing, or just cheer for whoever's brave enough. Pareho ra na.</p></div>
-      <div class="cell"><span class="idx">03</span><h3>Billiards</h3><p>Tables open all night. Welcome jud ang beginners.</p></div>
-      <div class="cell"><span class="idx">04</span><h3>Dinner</h3><p>A full meal at 6PM, with a seat saved for you.</p></div>
-      <div class="cell"><span class="idx">05</span><h3>Tagay &amp; Pulutan</h3><p>Keeps going basta padayon ka. No pressure.</p></div>
-      <div class="cell"><span class="idx">06</span><h3>Breakfast</h3><p>Hot food in the morning, sabay sa sunrise.</p></div>
-      <div class="cell"><span class="idx">07</span><h3>Unli Chikahan</h3><p>No small talk required. Maminaw ra, okay ra pod.</p></div>
-      <div class="cell"><span class="idx">08</span><h3>Unli Memories</h3><p>The part you'll still be talking about next year.</p></div>
-      <div class="cell"><span class="idx">09</span><h3>Anniversary Pin</h3><p>A custom pin for our first year lang. Imo na na.</p></div>
+      <div class="cell"><span class="idx">01</span><h3>Pool Party</h3><p>The whole pool is ours all night. Walay laing&nbsp;guests.</p></div>
+      <div class="cell"><span class="idx">02</span><h3>Karaoke</h3><p>Sing, or just cheer for whoever's brave enough. Pareho ra&nbsp;na.</p></div>
+      <div class="cell"><span class="idx">03</span><h3>Billiards</h3><p>Tables open all night. Welcome jud ang&nbsp;beginners.</p></div>
+      <div class="cell"><span class="idx">04</span><h3>Dinner</h3><p>A full meal at 6PM, with a seat saved for&nbsp;you.</p></div>
+      <div class="cell"><span class="idx">05</span><h3>Tagay &amp; Pulutan</h3><p>Keeps going basta padayon ka. No&nbsp;pressure.</p></div>
+      <div class="cell"><span class="idx">06</span><h3>Breakfast</h3><p>Hot food in the morning, sabay sa&nbsp;sunrise.</p></div>
+      <div class="cell"><span class="idx">07</span><h3>Unli Chikahan</h3><p>No small talk required. Maminaw ra, okay ra&nbsp;pod.</p></div>
+      <div class="cell"><span class="idx">08</span><h3>Unli Memories</h3><p>The part you'll still be talking about next&nbsp;year.</p></div>
+      <div class="cell"><span class="idx">09</span><h3>Anniversary Pin</h3><p>A custom pin for our first year lang. Imo na&nbsp;na.</p></div>
     </div>
 
-    <p class="note-line"><b>Not included:</b> transportation. But we'll send complete directions once you're confirmed, so nobody gets lost.</p>
+    <p class="note-line"><b>Not included:</b> transportation. But we'll send complete directions once you're confirmed, so nobody gets&nbsp;lost.</p>
   </div>
 </section>
 
@@ -362,7 +385,7 @@ footer a{color:var(--amber)}
   <div class="wrap">
     <p class="label"><span class="num">02</span> The venue</p>
     <h2 class="sec-title">The whole place is ours.</h2>
-    <p class="sec-intro">An exclusive resort in Lapu-Lapu City, booked for us lang — walay laing guests the whole weekend. A safe place to hang out and meet new friends.</p>
+    <p class="sec-intro">An exclusive resort in <span class="nb">Lapu-Lapu</span> City, booked for us lang — walay laing guests the whole weekend. A safe place to hang out and meet new&nbsp;friends.</p>
 
     <div class="venue-grid">
       <figure class="v-portrait"><img src="img/venue-pool2.jpg" width="800" height="1000" loading="lazy" alt="The resort pool from another angle."></figure>
@@ -374,7 +397,7 @@ footer a{color:var(--amber)}
       <figure><img src="img/venue-sofa.jpg" width="1000" height="525" loading="lazy" alt="Lounge seating inside the venue."></figure>
     </div>
 
-    <p class="note-line"><b>Sleeping:</b> shared barkada rooms, 20 beds total (+₱500). The sala is open pod — take a sofa, or bring your own banig, sleeping bag, or bisan tent.</p>
+    <p class="note-line"><b>Sleeping:</b> shared barkada rooms, 20 beds total (+₱500). The sala is open pod — take a sofa, or bring your own banig, sleeping bag, or bisan&nbsp;tent.</p>
   </div>
 </section>
 
@@ -383,16 +406,16 @@ footer a{color:var(--amber)}
   <div class="wrap">
     <p class="label"><span class="num">03</span> The program</p>
     <h2 class="sec-title">Here's the whole weekend.</h2>
-    <p class="sec-intro">So you know exactly what you're getting into. Join what you like, pass on what you don't. Nobody's forcing anything.</p>
+    <p class="sec-intro">So you know exactly what you're getting into. Join what you like, pass on what you don't. Nobody's forcing&nbsp;anything.</p>
 
     <div class="prog">
-      <div class="slot"><span class="slot-time">SAT 3:00 PM</span><span class="slot-t">Check-in</span><span class="slot-d">Arrive, drop your bag, relax. Walay dali-dali.</span></div>
-      <div class="slot"><span class="slot-time">SAT 4:00 – 6:00 PM</span><span class="slot-t">Swimming &amp; Games</span><span class="slot-d">Pool opens and the games start. The easiest way to meet people.</span></div>
-      <div class="slot"><span class="slot-time">SAT 6:00 – 8:00 PM</span><span class="slot-t">Dinner</span><span class="slot-d">Everyone eats together. Sit wherever you're comfortable.</span></div>
-      <div class="slot"><span class="slot-time">SAT 8:00 – 11:00 PM</span><span class="slot-t">Ultimate Game Night</span><span class="slot-d">Karaoke, billiards, and party games with prizes. Apil or watch lang.</span></div>
-      <div class="slot"><span class="slot-time">SAT 11PM – SUN 6AM</span><span class="slot-t">Tagay + Chikahan</span><span class="slot-d">Long conversations and slow rounds. Puyat or tulog, ikaw bahala.</span></div>
-      <div class="slot"><span class="slot-time">SUN 6:00 – 8:00 AM</span><span class="slot-t">Breakfast</span><span class="slot-d">The quiet part. Hot food and sunrise.</span></div>
-      <div class="slot"><span class="slot-time">SUN 8:00 – 11:00 AM</span><span class="slot-t">Swimming</span><span class="slot-d">One last dip usa ta mo-uli.</span></div>
+      <div class="slot"><span class="slot-time">SAT 3:00 PM</span><span class="slot-t"><span class="nb">Check-in</span></span><span class="slot-d">Arrive, drop your bag, relax. Walay&nbsp;<span class="nb">dali-dali</span>.</span></div>
+      <div class="slot"><span class="slot-time">SAT 4:00 – 6:00 PM</span><span class="slot-t">Swimming &amp; Games</span><span class="slot-d">Pool opens and the games start. The easiest way to meet&nbsp;people.</span></div>
+      <div class="slot"><span class="slot-time">SAT 6:00 – 8:00 PM</span><span class="slot-t">Dinner</span><span class="slot-d">Everyone eats together. Sit wherever you're&nbsp;comfortable.</span></div>
+      <div class="slot"><span class="slot-time">SAT 8:00 – 11:00 PM</span><span class="slot-t">Ultimate Game Night</span><span class="slot-d">Karaoke, billiards, and party games with prizes. Apil or watch&nbsp;lang.</span></div>
+      <div class="slot"><span class="slot-time">SAT 11PM – SUN 6AM</span><span class="slot-t">Tagay + Chikahan</span><span class="slot-d">Long conversations and slow rounds. Puyat or tulog, ikaw&nbsp;bahala.</span></div>
+      <div class="slot"><span class="slot-time">SUN 6:00 – 8:00 AM</span><span class="slot-t">Breakfast</span><span class="slot-d">The quiet part. Hot food and&nbsp;sunrise.</span></div>
+      <div class="slot"><span class="slot-time">SUN 8:00 – 11:00 AM</span><span class="slot-t">Swimming</span><span class="slot-d">One last dip usa ta&nbsp;<span class="nb">mo-uli</span>.</span></div>
     </div>
   </div>
 </section>
@@ -400,12 +423,12 @@ footer a{color:var(--amber)}
 <!-- ============ PREVIOUS EVENTS ============ -->
 <section id="previous">
   <div class="wrap">
-    <p class="label"><span class="num">04</span> Previous events</p>
+    <p class="label"><span class="num">04</span> Previous&nbsp;events</p>
     <h2 class="sec-title">We've been doing this all year.</h2>
-    <p class="sec-intro">Eight events since November 2025, with a Game Night every single month this year. Karon, the goal is to gather <b>50+ joiners</b> for this overnight — the biggest event nato so far.</p>
+    <p class="sec-intro">Eight events since November 2025, with a Game Night every single month this year. Karon, the goal is to gather <b>50+ joiners</b> for this overnight — the biggest event nato so&nbsp;far.</p>
 
     <div class="timeline">
-      <div class="ev"><figure><img src="img/anon-01.jpg" width="900" height="472" loading="lazy" alt="Group photo from the Year-End Party, November 2025."><figcaption class="tag">Overnight</figcaption></figure><h3>Year-End Party</h3><span>November 2025</span></div>
+      <div class="ev"><figure><img src="img/anon-01.jpg" width="900" height="472" loading="lazy" alt="Group photo from the Year-End Party, November 2025."><figcaption class="tag">Overnight</figcaption></figure><h3><span class="nb">Year-End</span> Party</h3><span>November 2025</span></div>
       <div class="ev"><figure><img src="img/anon-02.jpg" width="900" height="472" loading="lazy" alt="Group photo from Game Night 1.0, January 2026."></figure><h3>Game Night 1.0</h3><span>January 2026</span></div>
       <div class="ev"><figure><img src="img/anon-03.jpg" width="900" height="472" loading="lazy" alt="Group photo from Game Night 2.0, February 2026."></figure><h3>Game Night 2.0</h3><span>February 2026</span></div>
       <div class="ev"><figure><img src="img/anon-04.jpg" width="900" height="472" loading="lazy" alt="Group photo from Game Night 3.0, March 2026."></figure><h3>Game Night 3.0</h3><span>March 2026</span></div>
@@ -416,12 +439,12 @@ footer a{color:var(--amber)}
     </div>
 
     <div class="stat-row">
-      <div class="stat"><b>8</b><span>Events since Nov 2025</span></div>
-      <div class="stat"><b>7</b><span>Game nights, kada bulan</span></div>
-      <div class="stat"><b>50+</b><span>Ang target nato karon</span></div>
+      <div class="stat"><b>8</b><span>Events since Nov&nbsp;2025</span></div>
+      <div class="stat"><b>7</b><span>Game nights, kada&nbsp;bulan</span></div>
+      <div class="stat"><b>50+</b><span>Ang target nato&nbsp;karon</span></div>
     </div>
 
-    <p class="note-line">Faces are covered in every photo nato. That's on purpose — it's how it's always been done, and that won't change for this one.</p>
+    <p class="note-line">Faces are covered in every photo nato. That's on purpose — it's how it's always been done, and that won't change for this&nbsp;one.</p>
   </div>
 </section>
 
@@ -430,13 +453,41 @@ footer a{color:var(--amber)}
   <div class="wrap two">
     <div>
       <p class="label"><span class="num">05</span> Coming alone?</p>
-      <p class="big-quote">Okay ra. <em>Half the room</em> will be first-timers pod.</p>
+      <p class="big-quote">Okay ra. <em>Half the room</em> will be <span class="nb">first-timers</span>&nbsp;pod.</p>
     </div>
     <div class="body-copy">
-      <p>You don't need to know anyone to belong here, bai. That's the whole point — <strong>a safe place to meet new friends.</strong></p>
-      <p>The program is built so you never have to be the person standing alone by the pool. The 4PM games introduce you before you even have to speak. At dinner you'll sit next to someone new. By the time the tagay starts, parte na ka sa barkada.</p>
-      <p>And if you need a break, sige lang. Step away, nap, scroll your phone by the pool — <strong>walay mag-ihap.</strong></p>
-      <p>First time nimo mo-join sa events nato? Most people who come are first-timers pod. Kanunay man na ingon ani.</p>
+      <p>You don't need to know anyone to belong here, bai. That's the whole point — <strong>a safe place to meet new&nbsp;friends.</strong></p>
+      <p>The program is built so you never have to be the person standing alone by the pool. The 4PM games introduce you before you even have to speak. At dinner you'll sit next to someone new. By the time the tagay starts, parte na ka sa&nbsp;barkada.</p>
+      <p>And if you need a break, sige lang. Step away, nap, scroll your phone by the pool — <strong>walay&nbsp;<span class="nb">mag-ihap</span>.</strong></p>
+      <p>First time nimo <span class="nb">mo-join</span> sa events nato? Most people who come are <span class="nb">first-timers</span> pod. Kanunay man na ingon&nbsp;ani.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="says">
+  <div class="wrap">
+    <p class="label"><span class="num">06</span> Gikan sa mga&nbsp;<span class="nb">ni-apil</span></p>
+    <h2 class="sec-title">Don't take our word for&nbsp;it.</h2>
+    <p class="sec-intro">We asked people from the last event two questions: how was it, and would you recommend it to newbies? Here's what they&nbsp;said.</p>
+
+    <div class="quotes">
+      <figure class="quote">
+        <blockquote>
+          <p>It was amazing — I met new people, and the vibe was so warm and welcoming. Definitely yes, highly recommended, especially for newbies. The mods and committee are super duper ultra&nbsp;welcoming.</p>
+        </blockquote>
+        <figcaption>Reign · <b>@Sibs02_1</b></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote>
+          <p>As an introvert, I think the group finds ways to make you feel engaged — whether you're a bit forced into it, or you genuinely want to join but just don't know how to&nbsp;start.</p>
+          <p>I really enjoyed the silliness and the unhinged competitiveness during the games. You can't help but laugh while getting a little frustrated,&nbsp;HAHAHA.</p>
+          <p>It's very newbie and introvert friendly. A great starting point if you want to expand your social circle beyond the usual, surface level&nbsp;connections.</p>
+        </blockquote>
+        <figcaption>Car · <b>@hallucin0gens</b></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -444,30 +495,30 @@ footer a{color:var(--amber)}
 <!-- ============ HOUSE RULES (2x2) ============ -->
 <section id="safe">
   <div class="wrap">
-    <p class="label"><span class="num">06</span> House rules</p>
+    <p class="label"><span class="num">07</span> House rules</p>
     <h2 class="sec-title">A wholesome barkada outing.</h2>
-    <p class="sec-intro">Let's be clear about what this is, so you know exactly what you're saying yes to.</p>
+    <p class="sec-intro">Let's be clear about what this is, so you know exactly what you're saying yes&nbsp;to.</p>
 
     <div class="rules">
       <div class="rule">
         <span class="rule-n">01</span>
         <h3>This isn't an orgy party</h3>
-        <p>Let's say it plainly: this isn't an orgy party. It's swimming, games, food, and chikahan with the community. If that's what you came for, this isn't the event for you.</p>
+        <p>Let's say it plainly: this isn't an orgy party. It's swimming, games, food, and chikahan with the community. If that's what you came for, this isn't the event for&nbsp;you.</p>
       </div>
       <div class="rule">
         <span class="rule-n">02</span>
         <h3>Zero tolerance for harassment</h3>
-        <p>Sexual harassment gets you removed from the venue and the community. No warnings, no exceptions. Everyone deserves to feel safe here.</p>
+        <p>Sexual harassment gets you removed from the venue and the community. No warnings, no exceptions. Everyone deserves to feel safe&nbsp;here.</p>
       </div>
       <div class="rule">
         <span class="rule-n">03</span>
         <h3>We're here the whole night</h3>
-        <p>Organizers are on-site for the full 20 hours. If anything feels off, tell us and we'll handle it. Dili ka mag-inusara.</p>
+        <p>Organizers are <span class="nb">on-site</span> for the full 20 hours. If anything feels off, tell us and we'll handle it. Dili ka&nbsp;<span class="nb">mag-inusara</span>.</p>
       </div>
       <div class="rule">
         <span class="rule-n">04</span>
         <h3>Just be yourself</h3>
-        <p>No performing, no explaining yourself, no pressure to be someone else. That's what Anonymous is for. Come as you are.</p>
+        <p>No performing, no explaining yourself, no pressure to be someone else. That's what Anonymous is for. Come as you&nbsp;are.</p>
       </div>
     </div>
   </div>
@@ -476,52 +527,52 @@ footer a{color:var(--amber)}
 <!-- ============ PRICING ============ -->
 <section id="pricing">
   <div class="wrap">
-    <p class="label"><span class="num">07</span> Pricing</p>
+    <p class="label"><span class="num">08</span> Pricing</p>
     <h2 class="sec-title">Two ways to join.</h2>
-    <p class="sec-intro">Same food, same pool, same night. Ang kalahian lang, kanus-a ka mobayad — the earlier you settle, the less you pay.</p>
+    <p class="sec-intro">Same food, same pool, same night. Ang kalahian lang, <span class="nb">kanus-a</span> ka mobayad — the earlier you settle, the less you&nbsp;pay.</p>
 
     <div class="price-grid">
       <div class="card best">
-        <span class="flag">All-in · Until Aug 15 only</span>
-        <h3>One-time payment</h3>
+        <span class="flag"><span class="nb">All-in</span> · Until Aug 15 only</span>
+        <h3><span class="nb">One-time</span> payment</h3>
         <p class="amt">₱999</p>
         <ul>
-          <li>Everything above, apil na.</li>
-          <li>One payment, human na — no follow-ups</li>
-          <li>Your slot is locked dayon</li>
-          <li><strong>Available until Aug 15, 2026 only</strong></li>
+          <li>Everything above, apil&nbsp;na.</li>
+          <li>One payment, human na — no&nbsp;<span class="nb">follow-ups</span></li>
+          <li>Your slot is locked&nbsp;dayon</li>
+          <li><strong>Available until Aug 15, 2026&nbsp;only</strong></li>
         </ul>
-        <p class="total">Total: <b>₱999</b> · <span class="save">Cheapest way in.</span></p>
+        <p class="total">Total: <b>₱999</b> · <span class="save">Cheapest way&nbsp;in.</span></p>
       </div>
 
       <div class="card">
         <h3>Downpayment + balance</h3>
         <p class="amt">₱300 <small>DOWNPAYMENT</small></p>
         <ul>
-          <li>₱300 downpayment holds your slot</li>
-          <li class="warn">+₱700 until <strong>Aug 15</strong> → ₱1,000 total</li>
-          <li class="warn">+₱800 until <strong>Aug 31</strong> → ₱1,100 total</li>
-          <li class="warn">+₱900 until <strong>Sept 12</strong> → ₱1,200 total</li>
+          <li>₱300 downpayment holds your&nbsp;slot</li>
+          <li class="warn">+₱700 until <strong>Aug 15</strong> → ₱1,000&nbsp;total</li>
+          <li class="warn">+₱800 until <strong>Aug 31</strong> → ₱1,100&nbsp;total</li>
+          <li class="warn">+₱900 until <strong>Sept 12</strong> → ₱1,200&nbsp;total</li>
         </ul>
-        <p class="total">Total: <b>₱1,000 – ₱1,200</b> · The longer you wait, the more it costs.</p>
+        <p class="total">Total: <b>₱1,000 – ₱1,200</b> · The longer you wait, the more it&nbsp;costs.</p>
       </div>
     </div>
 
     <div class="math">
-      <p><b>The honest math:</b> ₱999 all-in is the cheapest, pero until Aug 15 ra na. After that the one-time rate is gone and it's downpayment plus balance — ₱1,000 if you settle by Aug 15, ₱1,100 by Aug 31, ₱1,200 by Sept 12. Every deadline you pass adds ₱100. Kung kaya nimo ang ₱999 karon, kuhaa na sa dili pa ma-Aug 15.</p>
+      <p><b>The honest math:</b> ₱999 <span class="nb">all-in</span> is the cheapest, pero until Aug 15 ra na. After that the <span class="nb">one-time</span> rate is gone and it's downpayment plus balance — ₱1,000 if you settle by Aug 15, ₱1,100 by Aug 31, ₱1,200 by Sept 12. Every deadline you pass adds ₱100. Kung kaya nimo ang ₱999 karon, kuhaa na sa dili pa <span class="nb">ma-Aug</span>&nbsp;15.</p>
     </div>
 
     <div class="addon">
       <div class="addon-body">
-        <p><strong>Want your own bed? Add ₱500.</strong> Only 20 beds sa shared barkada rooms, una-una gyud.</p>
-        <p>Okay ra pod kung walay bed. The sala sofas are open for everyone, and you can bring your own banig, sleeping bag, or bisan tent.</p>
+        <p><strong>Want your own bed? Add ₱500.</strong> Only 20 beds sa shared barkada rooms, <span class="nb">una-una</span>&nbsp;gyud.</p>
+        <p>Okay ra pod kung walay bed. The sala sofas are open for everyone, and you can bring your own banig, sleeping bag, or bisan&nbsp;tent.</p>
       </div>
       <span class="addon-amt">+₱500</span>
     </div>
 
     <div style="text-align:center;margin-top:var(--s5)">
       <a class="cta" href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">Apil Ko →</a>
-      <p class="cta-note">Same form ra. Pilia lang didto kung asa nimo gusto.</p>
+      <p class="cta-note">Same form ra. Pilia lang didto kung asa nimo&nbsp;gusto.</p>
     </div>
   </div>
 </section>
@@ -530,50 +581,50 @@ footer a{color:var(--amber)}
 <section id="faq">
   <div class="wrap two">
     <div>
-      <p class="label"><span class="num">08</span> Questions</p>
-      <p class="big-quote">Ask us <em>bisan unsa.</em></p>
-      <p class="body-copy" style="margin-top:var(--s3)">The common ones are here. If yours isn't, message us before you pay — we'd rather answer than have you guessing.</p>
+      <p class="label"><span class="num">09</span> Questions</p>
+      <p class="big-quote">Ask us <em>bisan&nbsp;unsa.</em></p>
+      <p class="body-copy" style="margin-top:var(--s3)">The common ones are here. If yours isn't, message us before you pay — we'd rather answer than have you&nbsp;guessing.</p>
     </div>
     <div>
       <details>
-        <summary>How many people are joining?</summary>
-        <p>The target is 50+ joiners — the biggest event nato so far. The venue has a limit, so mas maayo kung sayo ka mo-reserve.</p>
+        <summary>How many people are&nbsp;joining?</summary>
+        <p>The target is 50+ joiners — the biggest event nato so far. The venue has a limit, so mas maayo kung sayo ka&nbsp;<span class="nb">mo-reserve</span>.</p>
       </details>
       <details>
-        <summary>Where exactly is the venue?</summary>
-        <p>An exclusive resort in Lapu-Lapu City, Cebu. The exact location goes to confirmed participants lang since it's a private booking — kita ra jud tanan didto.</p>
+        <summary>Where exactly is the&nbsp;venue?</summary>
+        <p>An exclusive resort in <span class="nb">Lapu-Lapu</span> City, Cebu. The exact location goes to confirmed participants lang since it's a private booking — kita ra jud tanan&nbsp;didto.</p>
       </details>
       <details>
-        <summary>Is transportation included?</summary>
-        <p>No, you handle your own trip. But we'll send complete directions once you're confirmed, so you won't get lost.</p>
+        <summary>Is transportation&nbsp;included?</summary>
+        <p>No, you handle your own trip. But we'll send complete directions once you're confirmed, so you won't get&nbsp;lost.</p>
       </details>
       <details>
-        <summary>What should I bring?</summary>
-        <p>Towel, toiletries, swimwear, extra clothes, and your personal stuff. If you're not getting a bed, bring your own sleeping gear pod.</p>
+        <summary>What should I&nbsp;bring?</summary>
+        <p>Towel, toiletries, swimwear, extra clothes, and your personal stuff. If you're not getting a bed, bring your own sleeping gear&nbsp;pod.</p>
       </details>
       <details>
-        <summary>What about food and drinks?</summary>
-        <p>Dinner, breakfast, tagay and pulutan are all included. Walay dugang bayad once you're there.</p>
+        <summary>What about food and&nbsp;drinks?</summary>
+        <p>Dinner, breakfast, tagay and pulutan are all included. Walay dugang bayad once you're&nbsp;there.</p>
       </details>
       <details>
-        <summary>Where do I sleep without a bed?</summary>
-        <p>The sala sofas are open for everyone, or you can set up your own banig, sleeping bag, or tent. 20 ra ang beds (+₱500).</p>
+        <summary>Where do I sleep without a&nbsp;bed?</summary>
+        <p>The sala sofas are open for everyone, or you can set up your own banig, sleeping bag, or tent. 20 ra ang beds&nbsp;(+₱500).</p>
       </details>
       <details>
-        <summary>Do I have to stay the whole time?</summary>
-        <p>Dili. Check-in is 3PM and checkout is 11AM, pero you can arrive later or leave earlier. Ikaw bahala.</p>
+        <summary>Do I have to stay the whole&nbsp;time?</summary>
+        <p>Dili. <span class="nb">Check-in</span> is 3PM and checkout is 11AM, pero you can arrive later or leave earlier. Ikaw&nbsp;bahala.</p>
       </details>
       <details>
-        <summary>What if I don't drink?</summary>
-        <p>Okay ra kaayo, and more common than you'd think. Tagay is optional — ang chikahan man gyud ang main.</p>
+        <summary>What if I don't&nbsp;drink?</summary>
+        <p>Okay ra kaayo, and more common than you'd think. Tagay is optional — ang chikahan man gyud ang&nbsp;main.</p>
       </details>
       <details>
-        <summary>Can I get a refund?</summary>
-        <p>Walay refund, pero it's transferable. Kung dili ka makaadto, pass your slot to someone else and let us know kung kinsa.</p>
+        <summary>Can I get a&nbsp;refund?</summary>
+        <p>Walay refund, pero it's transferable. Kung dili ka makaadto, pass your slot to someone else and let us know kung&nbsp;kinsa.</p>
       </details>
       <details>
-        <summary>First time nako mo-join. Kulbaan ko — normal ba?</summary>
-        <p>Normal kaayo. Most people who come are first-timers pod, and it usually goes away by dinner. The <a href="#safe" style="color:var(--cyan)">house rules</a> are enforced and organizers are around all night — you won't be on your own.</p>
+        <summary>First time nako <span class="nb">mo-join</span>. Kulbaan ko — normal&nbsp;ba?</summary>
+        <p>Normal kaayo. Most people who come are <span class="nb">first-timers</span> pod, and it usually goes away by dinner. The <a href="#safe" style="color:var(--cyan)">house rules</a> are enforced and organizers are around all night — you won't be on your&nbsp;own.</p>
       </details>
     </div>
   </div>
@@ -581,8 +632,8 @@ footer a{color:var(--amber)}
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span>Lapu-Lapu City, Cebu ✦</span><span>₱999 All-in Until Aug 15 ✦</span><span>Target 50+ Joiners ✦</span>
-    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span>Lapu-Lapu City, Cebu ✦</span><span>₱999 All-in Until Aug 15 ✦</span><span>Target 50+ Joiners ✦</span>
+    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span><span class="nb">Lapu-Lapu</span> City, Cebu ✦</span><span>₱999 <span class="nb">All-in</span> Until Aug 15 ✦</span><span>Target 50+ Joiners ✦</span>
+    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span><span class="nb">Lapu-Lapu</span> City, Cebu ✦</span><span>₱999 <span class="nb">All-in</span> Until Aug 15 ✦</span><span>Target 50+ Joiners ✦</span>
   </div>
 </div>
 
@@ -590,9 +641,9 @@ footer a{color:var(--amber)}
 <section class="final">
   <div class="wrap">
     <h2>One Year.<br>One Night.<br>Kita Ra Tanan.</h2>
-    <p>Our first anniversary happens once lang. The goal is 50+ joiners — and we'd love for you to be one of them.</p>
+    <p>Our first anniversary happens once lang. The goal is 50+ joiners — and we'd love for you to be one of&nbsp;them.</p>
     <a class="cta" href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">Apil Ko →</a>
-    <p class="cta-note">Saturday to Sunday · Sept 12–13, 2026 · Lapu-Lapu City, Cebu</p>
+    <p class="cta-note">Saturday to Sunday · Sept 12–13, 2026 · <span class="nb">Lapu-Lapu</span> City,&nbsp;Cebu</p>
   </div>
 </section>
 
