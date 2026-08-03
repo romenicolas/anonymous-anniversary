@@ -195,9 +195,10 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
 
 
 /* ---------- testimonials ---------- */
-.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);align-items:start}
-@media(max-width:1000px){.quotes{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:700px){.quotes{grid-template-columns:1fr;gap:var(--s4)}}
+.quotes{columns:3;column-gap:var(--s3)}
+.quotes .quote{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 var(--s3);display:inline-block;width:100%}
+@media(max-width:1000px){.quotes{columns:2}}
+@media(max-width:700px){.quotes{columns:1}}
 .quote{
   border:1px solid var(--line);border-top:2px solid var(--amber);
   padding:var(--s4) var(--s3) var(--s3);position:relative;background:#0d0c0b;
@@ -370,7 +371,7 @@ footer a{color:var(--amber)}
       <span class="out">Anniversary</span>
       <span class="hl">Adventure</span>
     </h1>
-    <p class="hero-sub">An overnight barkada outing at an exclusive resort — <b>kita ra tanan, bai.</b> One year of Anonymous Cebu, and this is the biggest event nato so far. Bring your barkada, or come solo.<br><span class="nb">Okay ra jud both.</span></p>
+    <p class="hero-sub">An overnight barkada outing at an exclusive resort — <b>kita ra tanan, bai.</b> One year of Anonymous Cebu, and this is the biggest event nato so far. Bring your barkada, or come solo.<br><span class="nb">Okay ra jud&nbsp;both.</span></p>
 
     <dl class="facts">
       <div class="fact"><dt>When</dt><dd>Sat–Sun<br>Sept 12–13,&nbsp;2026</dd></div>
@@ -536,6 +537,40 @@ footer a{color:var(--amber)}
         <figcaption>Kimcheese · <b>@kimcheese98</b></figcaption>
       </figure>
 
+      <figure class="quote">
+        <blockquote>
+          <p>Every anon event nga akong naadtoan kay lingaw jud — you can really mingle and meet new&nbsp;friends!</p>
+          <p>Yes, I'd recommend it, especially for those looking for friends na <span class="nb">maka-jam</span>&nbsp;nila.</p>
+        </blockquote>
+        <figcaption>Blue · <b>@FO_6969</b></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote>
+          <p>I would definitely recommend game night if you're looking for friends. It felt like a space made especially for&nbsp;introverts.</p>
+        </blockquote>
+        <figcaption>David</figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote>
+          <p>I had so much fun sa event nga akong <span class="nb">na-joinan</span> — I met all sorts of people and shared a lot of laughs along the&nbsp;way.</p>
+          <p>Salute and congratulations to the founder @Matty and the mods for the successful events. Worth it ang <span class="nb">pag-join</span>, wala jud&nbsp;nasayang.</p>
+          <p>For the upcoming events, watch out and be excited.&nbsp;Ingats!</p>
+        </blockquote>
+        <figcaption>Jam · <b>@Jam28_24</b></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote>
+          <p>Many of us are introverts, NBSBs, hopeless romantics, socially awkward — simply longing for deep and genuine connections in a society where flings and casual <span class="nb">meet-ups</span> are becoming the&nbsp;norm.</p>
+          <p>Friends linked me to the anon group, and while I had hesitations about attending game night, I proved myself wrong. You're met with the warmth of the organisers, who listen to feedback and clearly put the members' best interest at heart. The participants come from all sorts of backgrounds, and the activities are engaging and well thought out — the whole thing gives off a real sense of safety and&nbsp;belonging.</p>
+          <p>Joining was never in my 2026 bingo card, but it's a very welcome twist of&nbsp;fate.</p>
+          <p>P.S. I think I may have a crushie, but let's see.&nbsp;:))</p>
+        </blockquote>
+        <figcaption>Jo · <b>@aarinmade</b></figcaption>
+      </figure>
+
     </div>
   </div>
 </section>
@@ -608,7 +643,7 @@ footer a{color:var(--amber)}
 
     <div class="spend">
       <h3>Where your payment&nbsp;goes</h3>
-      <p>Budgeted at 50 joiners, the real cost per person is <b>₱1,180</b>:</p>
+      <p>Budgeted at 50 joiners, the real cost per person is&nbsp;<b>₱1,180</b>:</p>
 
       <div class="spend-rows">
         <div class="spend-row"><span class="spend-amt">₱510</span><span>The resort — booked exclusively for us, 3PM to&nbsp;11AM</span></div>
