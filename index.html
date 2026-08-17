@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Anonymous Anniversary Adventure — Overnight Barkada Outing · Sept 12–13, 2026 · Lapu-Lapu City, Cebu</title>
-<meta name="description" content="An overnight barkada outing at an exclusive resort in Lapu-Lapu City, Cebu — kita ra tanan. The biggest Anonymous Cebu event yet. Pool party, game night, tagay til sunrise. Target 50+ joiners. All-in from P999.">
+<meta name="description" content="An overnight barkada outing at an exclusive resort in Lapu-Lapu City, Cebu — kita ra tanan. The biggest Anonymous Cebu event yet. Pool party, game night, tagay til sunrise. Target 50+ joiners. All-in P1,200 until Aug 31.">
 <meta property="og:title" content="Anonymous Anniversary Adventure — Our First Year">
-<meta property="og:description" content="An overnight barkada outing at an exclusive resort — kita ra tanan. The biggest event nato so far. Target 50+ joiners. All-in from P999.">
+<meta property="og:description" content="An overnight barkada outing at an exclusive resort — kita ra tanan. The biggest event nato so far. Target 50+ joiners. All-in P1,200 until Aug 31.">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -264,8 +264,8 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
 @media(max-width:860px){.two{grid-template-columns:1fr;gap:var(--s4)}}
 
 /* ---------- pricing ---------- */
-.price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s3);align-items:stretch}
-@media(max-width:780px){.price-grid{grid-template-columns:1fr;gap:var(--s4)}}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);align-items:stretch}
+@media(max-width:900px){.price-grid{grid-template-columns:1fr;gap:var(--s4)}}
 .card{border:1px solid var(--line);padding:var(--s4) var(--s3) var(--s3);display:flex;flex-direction:column;position:relative}
 .card.best{border:2px solid var(--amber);background:linear-gradient(180deg,rgba(255,149,0,.07),transparent 60%)}
 .flag{
@@ -336,6 +336,39 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
   .lad .off{grid-column:1/-1;text-align:left}
 }
 
+
+/* sold-out tier: present but visibly closed — proof the early rate really went */
+.card.soldout{opacity:.5}
+.card.soldout .amt s{text-decoration-thickness:3px}
+.flag-out{background:var(--paper-dim);color:var(--ink)}
+.lad.out{opacity:.5}
+.lad.out .pay s{text-decoration-thickness:2px}
+
+/* sticky mobile CTA — the single biggest conversion lever on phones,
+   where most of this traffic will come from */
+.sticky-cta{display:none}
+@media(max-width:760px){
+  .sticky-cta{
+    display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;
+    align-items:center;justify-content:space-between;gap:var(--s2);
+    padding:10px 16px;background:var(--ink);border-top:2px solid var(--amber);
+  }
+  .sticky-cta .px{line-height:1.25}
+  .sticky-cta .px b{
+    display:block;font-family:'Anton',Impact,sans-serif;font-size:1.25rem;
+    color:var(--paper);letter-spacing:.01em;
+  }
+  .sticky-cta .px span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--paper-dim)}
+  .sticky-cta a{
+    background:var(--amber);color:var(--ink);text-decoration:none;
+    font-family:'Anton',Impact,sans-serif;font-size:1.05rem;text-transform:uppercase;
+    letter-spacing:.04em;padding:13px 22px;border:2px solid var(--amber);
+    white-space:nowrap;line-height:1.2;
+  }
+  .sticky-cta a:active{background:var(--amber-hot)}
+  body{padding-bottom:74px}
+}
+
 /* ---------- faq ---------- */
 details{border-bottom:1px solid var(--line)}
 summary{
@@ -381,7 +414,7 @@ footer a{color:var(--amber)}
     </dl>
 
     <a class="cta" href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">Apil Ko →</a>
-    <p class="cta-note">₱999 <span class="nb">all-in</span> until Aug 15, or ₱300 downpayment lang to hold your slot&nbsp;today.</p>
+    <p class="cta-note">₱1,200 <span class="nb">all-in</span> until Aug 31. ₱300 downpayment lang to hold your slot&nbsp;today.</p>
   </div>
 </header>
 
@@ -572,6 +605,11 @@ footer a{color:var(--amber)}
       </figure>
 
     </div>
+
+    <div style="text-align:center;margin-top:var(--s5)">
+      <a class="cta" href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">Apil Ko →</a>
+      <p class="cta-note">₱1,200 <span class="nb">all-in</span> until Aug 31 · 50+ joiners&nbsp;target</p>
+    </div>
   </div>
 </section>
 
@@ -612,38 +650,49 @@ footer a{color:var(--amber)}
   <div class="wrap">
     <p class="label"><span class="num">08</span> Pricing</p>
     <h2 class="sec-title">Two ways to join.</h2>
-    <p class="sec-intro">Same food, same pool, same night. Ang kalahian lang, <span class="nb">kanus-a</span> ka mobayad — the earlier you settle, the less you&nbsp;pay.</p>
+    <p class="sec-intro">Early bird is sold out. Karon, <span class="nb">kanus-a</span> ka mobayad mao'y kalahian — the earlier you settle, the less you&nbsp;pay.</p>
 
     <div class="price-grid">
-      <div class="card best">
-        <span class="flag"><span class="nb">All-in</span> · Until Aug 15 only</span>
-        <h3><span class="nb">One-time</span> payment</h3>
-        <p class="amt">₱999</p>
+      <div class="card soldout">
+        <span class="flag flag-out">Sold out</span>
+        <h3>Early bird</h3>
+        <p class="amt"><s>₱999</s></p>
         <ul>
-          <li>Everything above, apil&nbsp;na.</li>
-          <li>One payment, human na — no&nbsp;<span class="nb">follow-ups</span></li>
-          <li>Your slot is locked&nbsp;dayon</li>
-          <li><strong>Available until Aug 15, 2026&nbsp;only</strong></li>
+          <li>Closed last Aug 15</li>
+          <li>Nahurot dayon — salamat sa tanan nga ni-apil sayo</li>
         </ul>
-        <p class="total">Total: <b>₱999</b> · <span class="save">Cheapest way&nbsp;in.</span></p>
+        <p class="total">No longer available.</p>
+      </div>
+
+      <div class="card best">
+        <span class="flag">Best price now · Until Aug 31</span>
+        <h3>Regular</h3>
+        <p class="amt">₱1,200</p>
+        <ul>
+          <li>Everything on this page, apil na — all-in</li>
+          <li>Pool, game night, dinner, breakfast, tagay ug pulutan</li>
+          <li>Your anniversary pin</li>
+          <li>Deadline: <strong>Aug 31, 2026</strong></li>
+        </ul>
+        <p class="total">Total: <b>₱1,200</b> · <span class="save">Basically at cost.</span></p>
       </div>
 
       <div class="card">
-        <h3>Downpayment + balance</h3>
-        <p class="amt">₱300 <small>DOWNPAYMENT</small></p>
+        <h3>Last call</h3>
+        <p class="amt">₱1,500</p>
         <ul>
-          <li>₱300 downpayment holds your&nbsp;slot</li>
-          <li class="warn">+₱700 until <strong>Aug 15</strong> → ₱1,000&nbsp;total</li>
-          <li class="warn">+₱800 until <strong>Aug 31</strong> → ₱1,100&nbsp;total</li>
-          <li class="warn">+₱900 until <strong>Sept 12</strong> → ₱1,200&nbsp;total</li>
+          <li>Sept 1 hangtod sa event day</li>
+          <li>Same event, same everything</li>
+          <li class="warn">₱300 more than the regular rate</li>
+          <li>Only if naa pay slot — dili guaranteed</li>
         </ul>
-        <p class="total">Total: <b>₱1,000 – ₱1,200</b> · The longer you wait, the more it&nbsp;costs.</p>
+        <p class="total">Total: <b>₱1,500</b> · Book late, pay more.</p>
       </div>
     </div>
 
     <div class="spend">
-      <h3>Where your payment&nbsp;goes</h3>
-      <p>Budgeted at 50 joiners, the real cost per person is&nbsp;<b>₱1,180</b>:</p>
+      <h3>Where your payment goes</h3>
+      <p>Budgeted at 50 joiners, the real cost per person is <b>₱1,180</b>:</p>
 
       <div class="spend-rows">
         <div class="spend-row"><span class="spend-amt">₱510</span><span>The resort — booked exclusively for us, 3PM to&nbsp;11AM</span></div>
@@ -654,17 +703,16 @@ footer a{color:var(--amber)}
         <div class="spend-row total"><span class="spend-amt">₱1,180</span><span>Real cost per&nbsp;person</span></div>
       </div>
 
-      <h4>So why is it&nbsp;₱999?</h4>
-      <p>Kay ang sayo nga bayad mao'y makatabang — it lets us lock the venue and buy in bulk. Mao nga ang sayo, mas&nbsp;barato:</p>
+      <h4>So why ₱1,200?</h4>
+      <p>Kay mao ra jud na ang gasto — ₱1,200 barely covers the ₱1,180 it actually costs to run this. Walay tago:</p>
 
       <div class="ladder">
-        <div class="lad"><span>By <strong>Aug 15</strong> — <span class="nb">one-time</span></span><span class="pay">₱999</span><span class="off">₱181 off</span></div>
-        <div class="lad"><span>By <strong>Aug 15</strong> — installment</span><span class="pay">₱1,000</span><span class="off">₱180 off</span></div>
-        <div class="lad"><span>By <strong>Aug 31</strong></span><span class="pay">₱1,100</span><span class="off">₱80 off</span></div>
-        <div class="lad"><span>By <strong>Sept 12</strong></span><span class="pay">₱1,200</span><span class="off">full cost</span></div>
+        <div class="lad out"><span>Early bird — closed Aug 15</span><span class="pay"><s>₱999</s></span><span class="off">sold out</span></div>
+        <div class="lad"><span>Regular — by <strong>Aug 31</strong></span><span class="pay">₱1,200</span><span class="off">at cost</span></div>
+        <div class="lad"><span>Last call — <strong>Sept 1</strong> onward</span><span class="pay">₱1,500</span><span class="off">books late</span></div>
       </div>
 
-      <p style="margin-top:var(--s3)">Basta sayo ka mobayad, mas barato&nbsp;jud.</p>
+      <p style="margin-top:var(--s3)">Basta sayo ka mobayad, mas barato jud. Ang ₱300 downpayment maka-hold sa imong slot sa presyo karon.</p>
     </div>
 
     <div class="addon">
@@ -737,8 +785,8 @@ footer a{color:var(--amber)}
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span><span class="nb">Lapu-Lapu</span> City, Cebu ✦</span><span>₱999 <span class="nb">All-in</span> Until Aug 15 ✦</span><span>Target 50+ Joiners ✦</span>
-    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span><span class="nb">Lapu-Lapu</span> City, Cebu ✦</span><span>₱999 <span class="nb">All-in</span> Until Aug 15 ✦</span><span>Target 50+ Joiners ✦</span>
+    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span><span class="nb">Lapu-Lapu</span> City, Cebu ✦</span><span>₱1,200 <span class="nb">All-in</span> Until Aug 31 ✦</span><span>Target 50+ Joiners ✦</span>
+    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span><span class="nb">Lapu-Lapu</span> City, Cebu ✦</span><span>₱1,200 <span class="nb">All-in</span> Until Aug 31 ✦</span><span>Target 50+ Joiners ✦</span>
   </div>
 </div>
 
@@ -757,6 +805,11 @@ footer a{color:var(--amber)}
     ANONYMOUS CEBU · ANNIVERSARY ADVENTURE 2026 · <a href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">APIL KO</a>
   </div>
 </footer>
+
+<div class="sticky-cta">
+  <span class="px"><b>₱1,200</b><span>Until Aug 31</span></span>
+  <a href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">Apil Ko →</a>
+</div>
 
 </body>
 </html>
