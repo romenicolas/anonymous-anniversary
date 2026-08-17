@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Anonymous Anniversary Adventure — Overnight Barkada Outing · Sept 12–13, 2026 · Lapu-Lapu City, Cebu</title>
-<meta name="description" content="An overnight barkada outing at an exclusive resort in Lapu-Lapu City, Cebu — kita ra tanan. The biggest Anonymous Cebu event yet. Pool party, game night, tagay til sunrise. Target 50+ joiners. All-in P1,200 until Aug 31.">
+<meta name="description" content="An overnight barkada outing at an exclusive resort in Lapu-Lapu City, Cebu — kita ra tanan. The biggest Anonymous Cebu event yet. Pool party, game night, tagay til sunrise. 50 slots only. All-in P1,200 until Aug 31.">
 <meta property="og:title" content="Anonymous Anniversary Adventure — Our First Year">
-<meta property="og:description" content="An overnight barkada outing at an exclusive resort — kita ra tanan. The biggest event nato so far. Target 50+ joiners. All-in P1,200 until Aug 31.">
+<meta property="og:description" content="An overnight barkada outing at an exclusive resort — kita ra tanan. The biggest event nato so far. 50 slots only. All-in P1,200 until Aug 31.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://anonymous2026.vercel.app/">
 <meta property="og:site_name" content="Anonymous Cebu">
@@ -19,7 +19,7 @@
 <meta property="og:image:alt" content="The private resort pool in Lapu-Lapu City, Cebu.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Anonymous Anniversary Adventure — Our First Year">
-<meta name="twitter:description" content="An overnight barkada outing at an exclusive resort — kita ra tanan. Target 50+ joiners. All-in P1,200 until Aug 31.">
+<meta name="twitter:description" content="An overnight barkada outing at an exclusive resort — kita ra tanan. 50 slots only. All-in P1,200 until Aug 31.">
 <meta name="twitter:image" content="https://anonymous2026.vercel.app/img/venue-pool.jpg">
 <meta name="twitter:image:alt" content="The private resort pool in Lapu-Lapu City, Cebu.">
 <meta name="robots" content="noindex, nofollow">
@@ -231,6 +231,28 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
 }
 .quote figcaption b{color:var(--cyan);font-weight:700}
 
+
+/* ---------- live urgency counter ---------- */
+.urgency{
+  display:grid;grid-template-columns:auto 1fr;gap:var(--s3);align-items:center;
+  border:1px solid var(--amber);background:rgba(255,149,0,.07);
+  padding:var(--s3);max-width:520px;margin:0 auto var(--s4);text-align:left;
+}
+.u-days{text-align:center;padding-right:var(--s3);border-right:1px solid rgba(255,149,0,.35)}
+.u-days b{display:block;font-family:'Anton',Impact,sans-serif;font-size:2.6rem;color:var(--amber);line-height:.95}
+.u-days span{display:block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);margin-top:4px;line-height:1.3}
+.u-slots b{display:block;font-family:'Anton',Impact,sans-serif;font-size:1.3rem;color:var(--paper);line-height:1.1;margin-bottom:9px}
+.u-bar{height:8px;background:rgba(244,239,228,.14);overflow:hidden;margin-bottom:9px}
+.u-bar i{display:block;height:100%;background:var(--amber);transition:width .6s ease}
+.u-slots > span{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--paper-dim);line-height:1.4}
+@media(max-width:420px){
+  .urgency{gap:var(--s2);padding:var(--s2)}
+  .u-days{padding-right:var(--s2)}
+  .u-days b{font-size:2.1rem}
+  .u-slots b{font-size:1.1rem}
+}
+@media (prefers-reduced-motion:reduce){.u-bar i{transition:none}}
+
 /* ---------- 3x3 includes grid ---------- */
 .grid{
   display:grid;grid-template-columns:repeat(3,1fr);
@@ -424,8 +446,17 @@ footer a{color:var(--amber)}
       <div class="fact"><dt>When</dt><dd>Sat–Sun<br>Sept 12–13,&nbsp;2026</dd></div>
       <div class="fact"><dt>Hours</dt><dd>Sat 3PM →<br>Sun 11AM</dd></div>
       <div class="fact"><dt>Where</dt><dd>Exclusive Resort<br><span class="nb">Lapu-Lapu</span>,&nbsp;Cebu</dd></div>
-      <div class="fact"><dt>Target</dt><dd>50+ Joiners</dd></div>
+      <div class="fact"><dt>Slots</dt><dd>50 Only</dd></div>
     </dl>
+
+    <div class="urgency">
+      <div class="u-days"><b id="u-days">25</b><span id="u-days-label">days to&nbsp;go</span></div>
+      <div class="u-slots">
+        <b><span id="u-left">19</span> slots&nbsp;left</b>
+        <div class="u-bar"><i id="u-bar" style="width:62%"></i></div>
+        <span id="u-sold">31 of 50&nbsp;taken</span>
+      </div>
+    </div>
 
     <a class="cta" href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">Apil Ko →</a>
     <p class="cta-note">₱1,200 <span class="nb">all-in</span> until Aug 31. ₱500 downpayment lang to hold your slot&nbsp;today.</p>
@@ -512,7 +543,7 @@ footer a{color:var(--amber)}
   <div class="wrap">
     <p class="label"><span class="num">04</span> Previous&nbsp;events</p>
     <h2 class="sec-title">We've been doing this all year.</h2>
-    <p class="sec-intro">Eight events since November 2025, with a Game Night every single month this year. Karon, the goal is to gather <b>50+ joiners</b> for this overnight — the biggest event nato so&nbsp;far.</p>
+    <p class="sec-intro">Eight events since November 2025, with a Game Night every single month this year. Karon, <b>50 slots ra</b> ang abli para niining overnight — the biggest event nato so&nbsp;far.</p>
 
     <div class="timeline">
       <div class="ev"><figure><img src="img/anon-01.jpg" width="900" height="472" loading="lazy" alt="Group photo from the Year-End Party, November 2025."><figcaption class="tag">Overnight</figcaption></figure><h3><span class="nb">Year-End</span> Party</h3><span>November 2025</span></div>
@@ -528,7 +559,7 @@ footer a{color:var(--amber)}
     <div class="stat-row">
       <div class="stat"><b>8</b><span>Events since Nov&nbsp;2025</span></div>
       <div class="stat"><b>7</b><span>Game nights, kada&nbsp;bulan</span></div>
-      <div class="stat"><b>50+</b><span>Ang target nato&nbsp;karon</span></div>
+      <div class="stat"><b>50</b><span>Slots ra&nbsp;karon</span></div>
     </div>
 
     <p class="note-line">Faces are covered in every photo nato. That's on purpose — it's how it's always been done, and that won't change for this&nbsp;one.</p>
@@ -622,7 +653,7 @@ footer a{color:var(--amber)}
 
     <div style="text-align:center;margin-top:var(--s5)">
       <a class="cta" href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">Apil Ko →</a>
-      <p class="cta-note">₱1,200 <span class="nb">all-in</span> until Aug 31 · 50+ joiners&nbsp;target</p>
+      <p class="cta-note">₱1,200 <span class="nb">all-in</span> until Aug 31 · 50 slots&nbsp;only</p>
     </div>
   </div>
 </section>
@@ -755,7 +786,7 @@ footer a{color:var(--amber)}
     <div>
       <details>
         <summary><span class="q">How many people are&nbsp;joining?</span></summary>
-        <p>The target is 50+ joiners — the biggest event nato so far. The venue has a limit, so mas maayo kung sayo ka&nbsp;<span class="nb">mo-reserve</span>.</p>
+        <p>50 slots ra tanan — mao ni ang pinakadako nga event nato, ug limitado jud ang venue. Once mapuno, sirado na. Mas maayo kung sayo ka&nbsp;<span class="nb">mo-reserve</span>.</p>
       </details>
       <details>
         <summary><span class="q">Where exactly is the&nbsp;venue?</span></summary>
@@ -799,8 +830,8 @@ footer a{color:var(--amber)}
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span><span class="nb">Lapu-Lapu</span> City, Cebu ✦</span><span>₱1,200 <span class="nb">All-in</span> Until Aug 31 ✦</span><span>Target 50+ Joiners ✦</span>
-    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span><span class="nb">Lapu-Lapu</span> City, Cebu ✦</span><span>₱1,200 <span class="nb">All-in</span> Until Aug 31 ✦</span><span>Target 50+ Joiners ✦</span>
+    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span><span class="nb">Lapu-Lapu</span> City, Cebu ✦</span><span>₱1,200 <span class="nb">All-in</span> Until Aug 31 ✦</span><span>50 Slots Only ✦</span>
+    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span><span class="nb">Lapu-Lapu</span> City, Cebu ✦</span><span>₱1,200 <span class="nb">All-in</span> Until Aug 31 ✦</span><span>50 Slots Only ✦</span>
   </div>
 </div>
 
@@ -808,7 +839,7 @@ footer a{color:var(--amber)}
 <section class="final">
   <div class="wrap">
     <h2>One Year.<br>One Night.<br>Kita Ra Tanan.</h2>
-    <p>Our first anniversary happens once lang. The goal is 50+ joiners — and we'd love for you to be one of&nbsp;them.</p>
+    <p>Our first anniversary happens once lang, ug 50 ra ka slots ang abli — and we'd love for you to be one of&nbsp;them.</p>
     <a class="cta" href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">Apil Ko →</a>
     <p class="cta-note">Saturday to Sunday · Sept 12–13, 2026 · <span class="nb">Lapu-Lapu</span> City,&nbsp;Cebu</p>
   </div>
@@ -821,9 +852,34 @@ footer a{color:var(--amber)}
 </footer>
 
 <div class="sticky-cta">
-  <span class="px"><b>₱1,200</b><span>Until Aug 31</span></span>
+  <span class="px"><b>₱1,200</b><span id="sticky-left">19 slots left</span></span>
   <a href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">Apil Ko →</a>
 </div>
+
+<script>
+(function(){
+  /* ---- update SOLD as registrations come in; everything else follows ---- */
+  var SOLD = 31, TOTAL = 50;
+  var EVENT = '2026-09-12T00:00:00+08:00';   /* event day, Manila time */
+
+  var left = Math.max(0, TOTAL - SOLD);
+  var pct  = Math.max(0, Math.min(100, Math.round(SOLD / TOTAL * 100)));
+
+  function set(id, txt){ var e = document.getElementById(id); if (e) e.textContent = txt; }
+
+  set('u-left', left);
+  set('u-sold', SOLD + ' of ' + TOTAL + ' taken');
+  set('sticky-left', left + (left === 1 ? ' slot left' : ' slots left'));
+  var bar = document.getElementById('u-bar');
+  if (bar) bar.style.width = pct + '%';
+
+  var days = Math.ceil((new Date(EVENT) - new Date()) / 86400000);
+  if (days > 1)       { set('u-days', days); set('u-days-label', 'days to go'); }
+  else if (days === 1){ set('u-days', 1);    set('u-days-label', 'day to go'); }
+  else if (days === 0){ set('u-days', 0);    set('u-days-label', 'happening now'); }
+  else                { set('u-days', 0);    set('u-days-label', 'event has passed'); }
+})();
+</script>
 
 </body>
 </html>
