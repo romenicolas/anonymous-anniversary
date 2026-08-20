@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Anonymous Anniversary Adventure — Overnight Barkada Outing · Sept 12–13, 2026 · Lapu-Lapu City, Cebu</title>
-<meta name="description" content="An overnight barkada outing at an exclusive resort in Lapu-Lapu City, Cebu — kita ra tanan. The biggest Anonymous Cebu event yet. Pool party, game night, tagay til sunrise. 50 slots only. From P900, all-in P1,200 - until Aug 31.">
+<meta name="description" content="An overnight barkada outing at an exclusive resort in Lapu-Lapu City, Cebu — kita ra tanan. The biggest Anonymous Cebu event yet. Pool party, game night, tagay til sunrise. 50 slots only. From P800 until Aug 31, prices go up Sept 1.">
 <meta property="og:title" content="Anonymous Anniversary Adventure — Our First Year">
-<meta property="og:description" content="An overnight barkada outing at an exclusive resort — kita ra tanan. The biggest event nato so far. 50 slots only. From P900, all-in P1,200 - until Aug 31.">
+<meta property="og:description" content="An overnight barkada outing at an exclusive resort — kita ra tanan. The biggest event nato so far. 50 slots only. From P800 until Aug 31, prices go up Sept 1.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://anonymous2026.vercel.app/">
 <meta property="og:site_name" content="Anonymous Cebu">
@@ -19,7 +19,7 @@
 <meta property="og:image:alt" content="The private resort pool in Lapu-Lapu City, Cebu.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Anonymous Anniversary Adventure — Our First Year">
-<meta name="twitter:description" content="An overnight barkada outing at an exclusive resort — kita ra tanan. 50 slots only. From P900, all-in P1,200 - until Aug 31.">
+<meta name="twitter:description" content="An overnight barkada outing at an exclusive resort — kita ra tanan. 50 slots only. From P800 until Aug 31, prices go up Sept 1.">
 <meta name="twitter:image" content="https://anonymous2026.vercel.app/img/venue-pool.jpg">
 <meta name="twitter:image:alt" content="The private resort pool in Lapu-Lapu City, Cebu.">
 <meta name="robots" content="noindex, nofollow">
@@ -27,6 +27,42 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
+/* ---------- theme tokens ---------- */
+:root,:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0a0a0a; --fg:#f4efe4; --fg-dim:#a9a396;
+  --line:rgba(244,239,228,.15);
+  --surface:#151311; --track:rgba(244,239,228,.14);
+  --accent-t:#ff9500; --cyan-t:#2ce8d8;
+  --inv-bg:#f4efe4; --inv-fg:#0a0a0a; --inv-dim:#4d493f; --inv-hot:#1c1c1c;
+  --scrim-a:rgba(10,10,10,.30); --scrim-b:rgba(10,10,10,.55);
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f4efe4; --fg:#14120f; --fg-dim:#6b6558;
+  --line:rgba(20,18,15,.18);
+  --surface:#ebe3d3; --track:rgba(20,18,15,.14);
+  --accent-t:#a35200; --cyan-t:#0a6f66;
+  --inv-bg:#14120f; --inv-fg:#f4efe4; --inv-dim:#a9a396; --inv-hot:#252119;
+  --scrim-a:rgba(10,10,10,.18); --scrim-b:rgba(10,10,10,.50);
+}
+:root[data-theme="light"] .hero::before{opacity:.55}
+:root[data-theme="light"] body::after{opacity:.03}
+:root[data-theme="light"] .ev img{opacity:1}
+
+/* ---------- theme toggle ---------- */
+.theme-toggle{
+  position:fixed;top:14px;right:14px;z-index:40;
+  width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+  background:var(--bg);color:var(--fg);border:1px solid var(--line);
+  font:inherit;font-size:15px;line-height:1;cursor:pointer;padding:0;
+  transition:border-color .15s ease,color .15s ease;
+}
+.theme-toggle:hover{border-color:var(--accent-t);color:var(--accent-t)}
+.theme-toggle:focus-visible{outline:3px solid var(--cyan-t);outline-offset:3px}
+@media(max-width:760px){.theme-toggle{top:10px;right:10px;width:36px;height:36px;font-size:14px}}
+
+
 :root{
   --ink:#0a0a0a;
   --paper:#f4efe4;
@@ -49,8 +85,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{
-  background:var(--ink);
-  color:var(--paper);
+  background:var(--bg);
+  color:var(--fg);
   font-family:'Space Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
   font-size:16px;
   line-height:1.7;
@@ -78,27 +114,27 @@ section{padding:var(--s6) 0}
 
 /* ---------- shared type ---------- */
 .label{
-  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);
+  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-t);
   font-weight:700;display:flex;align-items:center;gap:14px;margin-bottom:var(--s3);
 }
 .label::after{content:"";flex:1;height:1px;background:var(--line)}
-.num{color:var(--paper-dim)}
+.num{color:var(--fg-dim)}
 
 .sec-title{font-size:clamp(2rem,6vw,3.4rem);margin-bottom:var(--s2);max-width:16ch}
-.sec-intro{font-size:15px;color:var(--paper-dim);max-width:56ch;margin-bottom:var(--s5);line-height:1.75}
+.sec-intro{font-size:15px;color:var(--fg-dim);max-width:56ch;margin-bottom:var(--s5);line-height:1.75}
 
-.body-copy{font-size:15px;color:var(--paper-dim);line-height:1.8}
+.body-copy{font-size:15px;color:var(--fg-dim);line-height:1.8}
 .body-copy > p + p{margin-top:var(--s2)}
-.body-copy strong{color:var(--paper)}
+.body-copy strong{color:var(--fg)}
 
 .big-quote{
   font-family:'Anton',Impact,sans-serif;text-transform:uppercase;
   font-size:clamp(1.75rem,5vw,2.9rem);line-height:1.06;
 }
-.big-quote em{color:var(--amber);font-style:normal}
+.big-quote em{color:var(--accent-t);font-style:normal}
 
 /* ---------- marquee ---------- */
-.marquee{border-top:2px solid var(--paper);border-bottom:2px solid var(--paper);background:var(--amber);color:var(--ink);overflow:hidden;padding:11px 0}
+.marquee{border-top:2px solid var(--fg);border-bottom:2px solid var(--fg);background:var(--amber);color:var(--ink);overflow:hidden;padding:11px 0}
 .marquee-track{display:flex;width:max-content;animation:slide 34s linear infinite}
 .marquee span{font-family:'Anton',Impact,sans-serif;font-size:14.5px;letter-spacing:.14em;text-transform:uppercase;padding:0 20px;white-space:nowrap}
 @keyframes slide{to{transform:translateX(-50%)}}
@@ -113,17 +149,17 @@ section{padding:var(--s6) 0}
 }
 .hero > *{position:relative}
 .kicker{
-  display:inline-block;border:1px solid var(--amber);color:var(--amber);
+  display:inline-block;border:1px solid var(--amber);color:var(--accent-t);
   font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
   padding:8px 15px;margin-bottom:var(--s4);line-height:1.4;
 }
 h1{font-size:clamp(2.9rem,13vw,8.6rem);margin:0 auto var(--s4);max-width:14ch;line-height:.92}
-h1 .out{color:transparent;-webkit-text-stroke:2px var(--paper);display:block}
-h1 .hl{color:var(--amber);display:block}
+h1 .out{color:transparent;-webkit-text-stroke:2px var(--fg);display:block}
+h1 .hl{color:var(--accent-t);display:block}
 .hero-sub{
   font-size:clamp(1rem,2.4vw,1.25rem);max-width:38ch;margin:0 auto var(--s5);line-height:1.7;
 }
-.hero-sub b{color:var(--cyan);font-weight:700}
+.hero-sub b{color:var(--cyan-t);font-weight:700}
 
 .facts{
   display:grid;grid-template-columns:repeat(4,1fr);
@@ -131,7 +167,7 @@ h1 .hl{color:var(--amber);display:block}
 }
 .fact{padding:var(--s3) var(--s2);border-right:1px solid var(--line)}
 .fact:last-child{border-right:0}
-.fact dt{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper-dim);margin-bottom:8px;line-height:1.4}
+.fact dt{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:8px;line-height:1.4}
 .fact dd{font-family:'Anton',Impact,sans-serif;font-size:1.1rem;text-transform:uppercase;line-height:1.25}
 @media(max-width:720px){
   .facts{grid-template-columns:repeat(2,1fr)}
@@ -145,29 +181,29 @@ h1 .hl{color:var(--amber);display:block}
   font-family:'Anton',Impact,sans-serif;font-size:clamp(1.05rem,3vw,1.35rem);
   text-transform:uppercase;letter-spacing:.05em;text-decoration:none;
   padding:19px 42px;border:2px solid var(--amber);line-height:1.2;
-  box-shadow:7px 7px 0 var(--paper);
+  box-shadow:7px 7px 0 var(--fg);
   transition:transform .12s ease,box-shadow .12s ease,background .12s ease;
 }
-.cta:hover,.cta:focus-visible{background:var(--amber-hot);transform:translate(3px,3px);box-shadow:4px 4px 0 var(--paper)}
-.cta:active{transform:translate(7px,7px);box-shadow:0 0 0 var(--paper)}
-.cta-note{font-size:12.5px;color:var(--paper-dim);margin-top:var(--s2);line-height:1.6}
-a:focus-visible,summary:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
+.cta:hover,.cta:focus-visible{background:var(--amber-hot);transform:translate(3px,3px);box-shadow:4px 4px 0 var(--fg)}
+.cta:active{transform:translate(7px,7px);box-shadow:0 0 0 var(--fg)}
+.cta-note{font-size:12.5px;color:var(--fg-dim);margin-top:var(--s2);line-height:1.6}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--cyan-t);outline-offset:4px}
 
 
 /* ---------- images ---------- */
-figure{margin:0;position:relative;overflow:hidden;background:#151311}
+figure{margin:0;position:relative;overflow:hidden;background:var(--surface)}
 figure img{display:block;width:100%;height:100%;object-fit:cover}
 
 /* full-bleed hero banner */
-.banner{position:relative;border-top:2px solid var(--paper);border-bottom:2px solid var(--paper)}
+.banner{position:relative;border-top:2px solid var(--fg);border-bottom:2px solid var(--fg)}
 .banner img{display:block;width:100%;height:clamp(240px,42vw,480px);object-fit:cover}
 .banner::after{
   content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(10,10,10,.30),transparent 42%,rgba(10,10,10,.55));
+  background:linear-gradient(180deg,var(--scrim-a),transparent 42%,var(--scrim-b));
 }
 .banner figcaption{
   position:absolute;left:0;right:0;bottom:0;padding:var(--s3) var(--gutter);
-  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#f4efe4;
   font-weight:700;z-index:2;line-height:1.5;
 }
 
@@ -195,7 +231,7 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
   padding:5px 9px;line-height:1.4;z-index:2;
 }
 .ev h3{font-size:1rem;margin:14px 0 4px;line-height:1.2}
-.ev span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);font-weight:700}
+.ev span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan-t);font-weight:700}
 @media (prefers-reduced-motion:reduce){.ev img{transition:none}.ev:hover img{transform:none}}
 
 .stat-row{
@@ -203,9 +239,9 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
   border:1px solid var(--line);margin-top:var(--s5);
 }
 @media(max-width:620px){.stat-row{grid-template-columns:1fr}}
-.stat{background:var(--ink);padding:var(--s3);text-align:center}
-.stat b{display:block;font-family:'Anton',Impact,sans-serif;font-size:2.2rem;color:var(--amber);line-height:1;margin-bottom:8px}
-.stat span{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim);line-height:1.5}
+.stat{background:var(--bg);padding:var(--s3);text-align:center}
+.stat b{display:block;font-family:'Anton',Impact,sans-serif;font-size:2.2rem;color:var(--accent-t);line-height:1;margin-bottom:8px}
+.stat span{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim);line-height:1.5}
 
 
 /* ---------- testimonials ---------- */
@@ -215,21 +251,21 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
 @media(max-width:700px){.quotes{columns:1}}
 .quote{
   border:1px solid var(--line);border-top:2px solid var(--amber);
-  padding:var(--s4) var(--s3) var(--s3);position:relative;background:#0d0c0b;
+  padding:var(--s4) var(--s3) var(--s3);position:relative;background:var(--surface);
 }
 .quote::before{
   content:"\201C";position:absolute;top:-6px;left:var(--s3);
-  font-family:'Anton',Impact,sans-serif;font-size:4.5rem;color:var(--amber);
+  font-family:'Anton',Impact,sans-serif;font-size:4.5rem;color:var(--accent-t);
   opacity:.22;line-height:1;pointer-events:none;
 }
-.quote blockquote{margin:0;font-size:14.5px;line-height:1.85;color:var(--paper)}
+.quote blockquote{margin:0;font-size:14.5px;line-height:1.85;color:var(--fg)}
 .quote blockquote p + p{margin-top:var(--s2)}
 .quote figcaption{
   margin-top:var(--s3);padding-top:var(--s2);border-top:1px solid var(--line);
   font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--paper-dim);font-weight:700;line-height:1.6;
+  color:var(--fg-dim);font-weight:700;line-height:1.6;
 }
-.quote figcaption b{color:var(--cyan);font-weight:700}
+.quote figcaption b{color:var(--cyan-t);font-weight:700}
 
 
 /* ---------- live urgency counter ---------- */
@@ -239,12 +275,12 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
   padding:var(--s3);max-width:520px;margin:0 auto var(--s4);text-align:left;
 }
 .u-days{text-align:center;padding-right:var(--s3);border-right:1px solid rgba(255,149,0,.35)}
-.u-days b{display:block;font-family:'Anton',Impact,sans-serif;font-size:2.6rem;color:var(--amber);line-height:.95}
-.u-days span{display:block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);margin-top:4px;line-height:1.3}
-.u-slots b{display:block;font-family:'Anton',Impact,sans-serif;font-size:1.3rem;color:var(--paper);line-height:1.1;margin-bottom:9px}
-.u-bar{height:8px;background:rgba(244,239,228,.14);overflow:hidden;margin-bottom:9px}
+.u-days b{display:block;font-family:'Anton',Impact,sans-serif;font-size:2.6rem;color:var(--accent-t);line-height:.95}
+.u-days span{display:block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim);margin-top:4px;line-height:1.3}
+.u-slots b{display:block;font-family:'Anton',Impact,sans-serif;font-size:1.3rem;color:var(--fg);line-height:1.1;margin-bottom:9px}
+.u-bar{height:8px;background:var(--track);overflow:hidden;margin-bottom:9px}
 .u-bar i{display:block;height:100%;background:var(--amber);transition:width .6s ease}
-.u-slots > span{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--paper-dim);line-height:1.4}
+.u-slots > span{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-dim);line-height:1.4}
 @media(max-width:420px){
   .urgency{gap:var(--s2);padding:var(--s2)}
   .u-days{padding-right:var(--s2)}
@@ -261,15 +297,15 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
 @media(max-width:880px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.grid{grid-template-columns:1fr}}
 .cell{
-  background:var(--ink);padding:var(--s3);min-height:172px;
+  background:var(--bg);padding:var(--s3);min-height:172px;
   display:flex;flex-direction:column;transition:background .15s ease;
 }
-.cell:hover{background:#151311}
-.cell .idx{font-size:10.5px;color:var(--amber);letter-spacing:.18em;font-weight:700;margin-bottom:auto;padding-bottom:var(--s3)}
+.cell:hover{background:var(--surface)}
+.cell .idx{font-size:10.5px;color:var(--accent-t);letter-spacing:.18em;font-weight:700;margin-bottom:auto;padding-bottom:var(--s3)}
 .cell h3{font-size:1.35rem;margin-bottom:10px;line-height:1.1}
-.cell p{font-size:13.5px;color:var(--paper-dim);line-height:1.65}
-.note-line{margin-top:var(--s3);font-size:13px;color:var(--paper-dim);line-height:1.7}
-.note-line b{color:var(--paper)}
+.cell p{font-size:13.5px;color:var(--fg-dim);line-height:1.65}
+.note-line{margin-top:var(--s3);font-size:13px;color:var(--fg-dim);line-height:1.7}
+.note-line b{color:var(--fg)}
 
 /* ---------- program ---------- */
 .prog{border-top:1px solid var(--line)}
@@ -277,10 +313,10 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
   display:grid;grid-template-columns:200px 1fr 30ch;gap:var(--s3);align-items:baseline;
   padding:var(--s3) 0;border-bottom:1px solid var(--line);
 }
-.slot-time{font-size:12.5px;color:var(--cyan);letter-spacing:.06em;font-weight:700;white-space:nowrap;line-height:1.6}
+.slot-time{font-size:12.5px;color:var(--cyan-t);letter-spacing:.06em;font-weight:700;white-space:nowrap;line-height:1.6}
 .slot-t{font-family:'Anton',Impact,sans-serif;font-size:clamp(1.35rem,3.6vw,2rem);text-transform:uppercase;line-height:1.1;transition:color .15s ease}
-.slot:hover .slot-t{color:var(--amber)}
-.slot-d{font-size:13.5px;color:var(--paper-dim);line-height:1.65}
+.slot:hover .slot-t{color:var(--accent-t)}
+.slot-d{font-size:13.5px;color:var(--fg-dim);line-height:1.65}
 @media(max-width:900px){
   .slot{grid-template-columns:1fr;gap:6px;padding:var(--s3) 0}
   .slot-d{max-width:52ch}
@@ -290,10 +326,10 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
 #safe{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(44,232,216,.05),transparent 55%)}
 .rules{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s5) var(--s5)}
 @media(max-width:780px){.rules{grid-template-columns:1fr;gap:var(--s4)}}
-.rule{border-top:2px solid var(--cyan);padding-top:var(--s2)}
-.rule-n{font-size:10.5px;letter-spacing:.2em;color:var(--cyan);font-weight:700;display:block;margin-bottom:var(--s2)}
+.rule{border-top:2px solid var(--cyan-t);padding-top:var(--s2)}
+.rule-n{font-size:10.5px;letter-spacing:.2em;color:var(--cyan-t);font-weight:700;display:block;margin-bottom:var(--s2)}
 .rule h3{font-size:1.3rem;margin-bottom:12px;line-height:1.15}
-.rule p{font-size:14px;color:var(--paper-dim);line-height:1.75}
+.rule p{font-size:14px;color:var(--fg-dim);line-height:1.75}
 
 /* ---------- two-column ---------- */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5)}
@@ -310,30 +346,30 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
 }
 .card h3{
   font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.18em;
-  color:var(--paper-dim);margin-bottom:var(--s2);text-transform:uppercase;
+  color:var(--fg-dim);margin-bottom:var(--s2);text-transform:uppercase;
 }
 .amt{font-family:'Anton',Impact,sans-serif;font-size:clamp(2.8rem,8vw,4.2rem);line-height:.95;margin-bottom:var(--s1)}
-.card.best .amt{color:var(--amber)}
-.amt small{font-size:.3em;letter-spacing:.1em;vertical-align:top;color:var(--paper-dim)}
-.card ul{list-style:none;margin:var(--s3) 0;font-size:13.5px;color:var(--paper-dim);flex:1}
+.card.best .amt{color:var(--accent-t)}
+.amt small{font-size:.3em;letter-spacing:.1em;vertical-align:top;color:var(--fg-dim)}
+.card ul{list-style:none;margin:var(--s3) 0;font-size:13.5px;color:var(--fg-dim);flex:1}
 .card li{padding-left:22px;position:relative;margin-bottom:12px;line-height:1.65}
 .card li:last-child{margin-bottom:0}
-.card li::before{content:"→";position:absolute;left:0;top:0;color:var(--amber)}
-.card li.warn::before{content:"+";color:var(--cyan)}
-.card li strong{color:var(--paper)}
-.total{font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding-top:var(--s3);border-top:1px solid var(--line);color:var(--paper-dim);line-height:1.7}
-.total b{color:var(--paper);font-weight:700}
-.total .save{color:var(--cyan)}
+.card li::before{content:"→";position:absolute;left:0;top:0;color:var(--accent-t)}
+.card li.warn::before{content:"+";color:var(--cyan-t)}
+.card li strong{color:var(--fg)}
+.total{font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding-top:var(--s3);border-top:1px solid var(--line);color:var(--fg-dim);line-height:1.7}
+.total b{color:var(--fg);font-weight:700}
+.total .save{color:var(--cyan-t)}
 
-.math{margin-top:var(--s4);border-left:3px solid var(--amber);padding:4px 0 4px var(--s3);font-size:14px;color:var(--paper-dim);max-width:62ch;line-height:1.8}
-.math b{color:var(--paper)}
+.math{margin-top:var(--s4);border-left:3px solid var(--amber);padding:4px 0 4px var(--s3);font-size:14px;color:var(--fg-dim);max-width:62ch;line-height:1.8}
+.math b{color:var(--fg)}
 
 .addon{margin-top:var(--s4);border:1px dashed var(--line);padding:var(--s3);display:flex;gap:var(--s3);align-items:center;justify-content:space-between;flex-wrap:wrap}
 .addon-body{flex:1 1 340px}
-.addon p{font-size:13.5px;color:var(--paper-dim);line-height:1.75}
+.addon p{font-size:13.5px;color:var(--fg-dim);line-height:1.75}
 .addon p + p{margin-top:10px}
-.addon strong{color:var(--paper)}
-.addon-amt{font-family:'Anton',Impact,sans-serif;font-size:2rem;color:var(--cyan);line-height:1}
+.addon strong{color:var(--fg)}
+.addon-amt{font-family:'Anton',Impact,sans-serif;font-size:2rem;color:var(--cyan-t);line-height:1}
 
 
 /* ---------- where your payment goes ---------- */
@@ -341,30 +377,30 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
        padding:var(--s4) var(--s3);margin-top:var(--s4)}
 .spend h3{font-size:1.5rem;margin-bottom:var(--s2);line-height:1.1}
 .spend h4{font-size:1.15rem;margin:var(--s4) 0 var(--s2);line-height:1.15}
-.spend > p{font-size:14px;color:var(--paper-dim);line-height:1.75;max-width:60ch}
-.spend > p b{color:var(--paper)}
+.spend > p{font-size:14px;color:var(--fg-dim);line-height:1.75;max-width:60ch}
+.spend > p b{color:var(--fg)}
 .spend-rows{margin-top:var(--s3)}
 .spend-row{
   display:grid;grid-template-columns:96px 1fr;gap:var(--s3);
   padding:11px 0;border-bottom:1px solid var(--line);align-items:baseline;
 }
-.spend-row span:last-child{font-size:13.5px;color:var(--paper-dim);line-height:1.6}
-.spend-amt{font-family:'Anton',Impact,sans-serif;font-size:1.3rem;color:var(--amber);
+.spend-row span:last-child{font-size:13.5px;color:var(--fg-dim);line-height:1.6}
+.spend-amt{font-family:'Anton',Impact,sans-serif;font-size:1.3rem;color:var(--accent-t);
            white-space:nowrap;line-height:1.2}
-.spend-row.total{border-bottom:0;border-top:2px solid var(--paper);margin-top:6px;padding-top:15px}
-.spend-row.total .spend-amt{color:var(--paper)}
-.spend-row.total span:last-child{color:var(--paper);font-weight:700;text-transform:uppercase;
+.spend-row.total{border-bottom:0;border-top:2px solid var(--fg);margin-top:6px;padding-top:15px}
+.spend-row.total .spend-amt{color:var(--fg)}
+.spend-row.total span:last-child{color:var(--fg);font-weight:700;text-transform:uppercase;
   font-size:11.5px;letter-spacing:.12em}
 .ladder{margin-top:var(--s3);border-top:1px solid var(--line)}
 .lad{
   display:grid;grid-template-columns:1fr 82px 108px;gap:var(--s2);
   padding:11px 0;border-bottom:1px solid var(--line);align-items:baseline;
-  font-size:13.5px;color:var(--paper-dim);line-height:1.6;
+  font-size:13.5px;color:var(--fg-dim);line-height:1.6;
 }
-.lad .pay{font-family:'Anton',Impact,sans-serif;font-size:1.05rem;color:var(--paper);
+.lad .pay{font-family:'Anton',Impact,sans-serif;font-size:1.05rem;color:var(--fg);
           white-space:nowrap;text-align:right}
-.lad .off{color:var(--cyan);font-weight:700;white-space:nowrap;text-align:right;font-size:12.5px}
-.lad strong{color:var(--paper)}
+.lad .off{color:var(--cyan-t);font-weight:700;white-space:nowrap;text-align:right;font-size:12.5px}
+.lad strong{color:var(--fg)}
 @media(max-width:600px){
   .spend-row{grid-template-columns:80px 1fr;gap:var(--s2)}
   .lad{grid-template-columns:1fr auto;row-gap:2px}
@@ -376,7 +412,7 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
 /* sold-out tier: present but visibly closed — proof the early rate really went */
 .card.soldout{opacity:.5}
 .card.soldout .amt s{text-decoration-thickness:3px}
-.flag-out{background:var(--paper-dim);color:var(--ink)}
+.flag-out{background:var(--fg-dim);color:var(--bg)}
 .lad.out{opacity:.5}
 .lad.out .pay s{text-decoration-thickness:2px}
 
@@ -387,14 +423,14 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
   .sticky-cta{
     display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;
     align-items:center;justify-content:space-between;gap:var(--s2);
-    padding:10px 16px;background:var(--ink);border-top:2px solid var(--amber);
+    padding:10px 16px;background:var(--bg);border-top:2px solid var(--amber);
   }
   .sticky-cta .px{line-height:1.25}
   .sticky-cta .px b{
     display:block;font-family:'Anton',Impact,sans-serif;font-size:1.25rem;
-    color:var(--paper);letter-spacing:.01em;
+    color:var(--fg);letter-spacing:.01em;
   }
-  .sticky-cta .px span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--paper-dim)}
+  .sticky-cta .px span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim)}
   .sticky-cta a{
     background:var(--amber);color:var(--ink);text-decoration:none;
     font-family:'Anton',Impact,sans-serif;font-size:1.05rem;text-transform:uppercase;
@@ -408,22 +444,47 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
 
 /* package cards: explicit included / not-included marks */
 .card-when{
-  font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan-t);
   font-weight:700;line-height:1.5;margin-bottom:var(--s2);
 }
-.card li.yes::before{content:"\2713";color:var(--amber);font-weight:700}
-.card li.no::before{content:"\2715";color:var(--paper-dim);font-weight:700}
-.card li.no{color:rgba(169,163,150,.72)}
+.card li.yes::before{content:"\2713";color:var(--accent-t);font-weight:700}
+.card li.no::before{content:"\2715";color:var(--fg-dim);font-weight:700}
+.card li.no{color:var(--fg-dim);opacity:.78}
 .deadline{
   margin-top:var(--s3);border:1px dashed var(--amber);padding:var(--s3);
-  text-align:center;font-size:13.5px;color:var(--paper-dim);line-height:1.75;
+  text-align:center;font-size:13.5px;color:var(--fg-dim);line-height:1.75;
 }
-.deadline b{color:var(--amber)}
+.deadline b{color:var(--accent-t)}
 .reassure{
-  margin-top:var(--s3);font-size:12.5px;color:var(--paper-dim);line-height:1.7;
+  margin-top:var(--s3);font-size:12.5px;color:var(--fg-dim);line-height:1.7;
   max-width:46ch;margin-left:auto;margin-right:auto;
 }
-.reassure b{color:var(--paper)}
+.reassure b{color:var(--fg)}
+
+
+.was{font-size:11.5px;color:var(--fg-dim);line-height:1.5;margin-bottom:var(--s2)}
+.was b{color:var(--cyan-t);font-weight:700}
+.dl-grid{margin-top:var(--s3);text-align:left}
+.dl-row{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr .8fr;gap:var(--s2);
+  padding:10px 0;border-bottom:1px solid var(--line);align-items:baseline;
+  font-size:13px;line-height:1.5;
+}
+.dl-row:last-of-type{border-bottom:0}
+.dl-head{
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--fg-dim);font-weight:700;
+}
+.dl-row .now{font-family:'Anton',Impact,sans-serif;font-size:1.1rem;color:var(--accent-t);white-space:nowrap}
+.dl-row .later{color:var(--fg-dim);text-decoration:line-through;white-space:nowrap}
+.dl-row .sv{color:var(--cyan-t);font-weight:700;white-space:nowrap}
+.dl-note{margin-top:var(--s3);font-size:12.5px;color:var(--fg-dim);line-height:1.7}
+@media(max-width:620px){
+  .dl-row{grid-template-columns:1fr auto auto;row-gap:2px;font-size:12.5px}
+  .dl-head span:nth-child(4){display:none}
+  .dl-row .sv{display:none}
+  .dl-row .now,.dl-row .later{text-align:right}
+}
 
 /* ---------- faq ---------- */
 details{border-bottom:1px solid var(--line)}
@@ -434,22 +495,27 @@ summary{
 }
 summary > .q{flex:1;min-width:0}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--amber);font-size:20px;flex-shrink:0;line-height:1.2}
+summary::after{content:"+";color:var(--accent-t);font-size:20px;flex-shrink:0;line-height:1.2}
 details[open] summary::after{content:"–"}
-details p{font-size:13.5px;color:var(--paper-dim);padding:0 0 var(--s3);line-height:1.8;max-width:58ch}
+details p{font-size:13.5px;color:var(--fg-dim);padding:0 0 var(--s3);line-height:1.8;max-width:58ch}
 
 /* ---------- final ---------- */
-.final{text-align:center;background:var(--paper);color:var(--ink);padding:var(--s6) 0}
+.final{text-align:center;background:var(--inv-bg);color:var(--inv-fg);padding:var(--s6) 0}
 .final h2{font-size:clamp(2.4rem,9vw,5.4rem);margin-bottom:var(--s3);line-height:1}
-.final p{color:#4d493f;font-size:14.5px;max-width:46ch;margin:0 auto var(--s4);line-height:1.75}
-.final .cta{background:var(--ink);color:var(--paper);border-color:var(--ink);box-shadow:7px 7px 0 var(--amber)}
-.final .cta:hover{background:#1c1c1c}
-.final .cta-note{color:#6a655a;margin-top:var(--s3)}
-footer{padding:var(--s4) 0;text-align:center;font-size:11.5px;color:var(--paper-dim);letter-spacing:.1em;line-height:2}
-footer a{color:var(--amber)}
+.final p{color:var(--inv-dim);font-size:14.5px;max-width:46ch;margin:0 auto var(--s4);line-height:1.75}
+.final .cta{background:var(--inv-fg);color:var(--inv-bg);border-color:var(--inv-fg);box-shadow:7px 7px 0 var(--amber)}
+.final .cta:hover{background:var(--inv-hot)}
+.final .cta-note{color:var(--inv-dim);margin-top:var(--s3)}
+footer{padding:var(--s4) 0;text-align:center;font-size:11.5px;color:var(--fg-dim);letter-spacing:.1em;line-height:2}
+footer a{color:var(--accent-t)}
 </style>
+<script>(function(){var t;try{t=localStorage.getItem('theme');}catch(e){}
+if(t!=='light'&&t!=='dark'){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';}
+document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
+<button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme"><span id="theme-icon">☀</span></button>
+
 
 <!-- ============ HERO ============ -->
 <header class="hero">
@@ -479,7 +545,7 @@ footer a{color:var(--amber)}
     </div>
 
     <a class="cta" href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">Apil Ko →</a>
-    <p class="cta-note">From ₱900, or ₱1,200 <span class="nb">all-in</span> — until Aug 31. ₱500 downpayment lang to hold your&nbsp;slot.</p>
+    <p class="cta-note">From ₱800 until Aug 31 — prices go up Sept 1. ₱500 downpayment lang to hold your&nbsp;slot.</p>
   </div>
 </header>
 
@@ -673,7 +739,7 @@ footer a{color:var(--amber)}
 
     <div style="text-align:center;margin-top:var(--s5)">
       <a class="cta" href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">Apil Ko →</a>
-      <p class="cta-note">From ₱900 until Aug 31 · 50 slots&nbsp;only</p>
+      <p class="cta-note">From ₱800 until Aug 31 · 50 slots&nbsp;only</p>
     </div>
   </div>
 </section>
@@ -720,46 +786,58 @@ footer a{color:var(--amber)}
     <div class="price-grid">
       <div class="card best">
         <span class="flag">Most popular · The full night</span>
-        <h3>Full Experience</h3>
+        <h3>Sunrise Chaser</h3>
         <p class="amt">₱1,200</p>
-        <p class="card-when">Sat 3PM → Sun&nbsp;11AM</p>
+        <p class="was">₱1,500 from Sept 1 · <b>save&nbsp;₱300</b></p>
+        <p class="card-when">Sat 3PM → Sun 11AM</p>
         <ul>
-          <li class="yes">Dinner, breakfast, tagay ug&nbsp;pulutan</li>
-          <li class="yes">Pool party, game night, billiards,&nbsp;karaoke</li>
-          <li class="yes">Overnight — the whole 20&nbsp;hours</li>
+          <li class="yes">Dinner, breakfast, tagay ug pulutan</li>
+          <li class="yes">Pool party, game night, billiards, karaoke</li>
+          <li class="yes">Overnight — the whole 20 hours</li>
           <li class="yes">Anniversary pin</li>
         </ul>
-        <p class="total">Total: <b>₱1,200</b> · <span class="save">Tanan, apil&nbsp;na.</span></p>
+        <p class="total">Total: <b>₱1,200</b> · <span class="save">Tanan, apil na.</span></p>
       </div>
 
       <div class="card">
         <h3>Cinderella</h3>
-        <p class="amt">₱900</p>
-        <p class="card-when">Sat 3PM → 12AM&nbsp;curfew</p>
+        <p class="amt">₱800</p>
+        <p class="was">₱1,000 from Sept 1 · <b>save&nbsp;₱200</b></p>
+        <p class="card-when">Sat 3PM → 12AM curfew</p>
         <ul>
-          <li class="yes">Dinner, tagay ug&nbsp;pulutan</li>
-          <li class="yes">Pool party, game night, billiards,&nbsp;karaoke</li>
+          <li class="yes">Dinner, tagay ug pulutan</li>
+          <li class="yes">Pool party, game night, billiards, karaoke</li>
           <li class="yes">Anniversary pin</li>
-          <li class="no">Walay breakfast — <span class="nb">mo-uli</span> ka by&nbsp;12AM</li>
+          <li class="no">Walay breakfast — <span class="nb">mo-uli</span> ka by 12AM</li>
         </ul>
-        <p class="total">Total: <b>₱900</b> · Para sa <span class="nb">mo-uli</span>&nbsp;dayon.</p>
+        <p class="total">Total: <b>₱800</b> · Para sa <span class="nb">mo-uli</span>&nbsp;dayon.</p>
       </div>
 
       <div class="card">
         <h3>Nightcrawler</h3>
-        <p class="amt">₱900</p>
-        <p class="card-when">Sat 9PM → Sun&nbsp;11AM</p>
+        <p class="amt">₱800</p>
+        <p class="was">₱1,000 from Sept 1 · <b>save&nbsp;₱200</b></p>
+        <p class="card-when">Sat 9PM → Sun 11AM</p>
         <ul>
-          <li class="yes">Tagay, pulutan, ug&nbsp;breakfast</li>
-          <li class="yes">Game night, billiards, karaoke, morning&nbsp;swim</li>
-          <li class="yes">Overnight — matulog ka&nbsp;didto</li>
-          <li class="no">Walay dinner — 9PM pa ang&nbsp;entry</li>
+          <li class="yes">Tagay, pulutan, ug breakfast</li>
+          <li class="yes">Game night, billiards, karaoke, morning swim</li>
+          <li class="yes">Overnight — matulog ka didto</li>
+          <li class="no">Walay dinner — 9PM pa ang entry</li>
         </ul>
-        <p class="total">Total: <b>₱900</b> · Para sa gikan pa sa&nbsp;trabaho.</p>
+        <p class="total">Total: <b>₱800</b> · Para sa gikan pa sa&nbsp;trabaho.</p>
       </div>
     </div>
 
-    <p class="deadline">All three prices are good <b>until Aug 31 only</b>. From Sept 1 to event day it's <b>₱1,500</b>, full experience ra, ug kung naa pay&nbsp;slot.</p>
+    <div class="deadline">
+      <b>Mo-register karon, mas barato jud.</b>
+      <div class="dl-grid">
+        <div class="dl-row dl-head"><span>Package</span><span>Until Aug&nbsp;31</span><span>From Sept&nbsp;1</span><span>You save</span></div>
+        <div class="dl-row"><span>Sunrise Chaser</span><span class="now">₱1,200</span><span class="later">₱1,500</span><span class="sv">₱300</span></div>
+        <div class="dl-row"><span>Cinderella</span><span class="now">₱800</span><span class="later">₱1,000</span><span class="sv">₱200</span></div>
+        <div class="dl-row"><span>Nightcrawler</span><span class="now">₱800</span><span class="later">₱1,000</span><span class="sv">₱200</span></div>
+      </div>
+      <p class="dl-note">Every package goes up on Sept 1. Ang bayad karon, mao'y pinakabarato nga makuha&nbsp;nimo.</p>
+    </div>
 
     <div class="spend">
       <h3>Where your payment goes</h3>
@@ -775,13 +853,13 @@ footer a{color:var(--amber)}
       </div>
 
       <h4>So why ₱1,200?</h4>
-      <p>Kay mao ra jud na ang gasto. Walay patong — ₱1,200 is exactly what one person costs. Ang ₱900 packages, <span class="nb">mo-skip</span> ka og bahin sa pagkaon, mao nga mas&nbsp;barato.</p>
+      <p>Kay mao ra jud na ang gasto. Walay patong — ₱1,200 is exactly what one person costs. Ang ₱800 packages, <span class="nb">mo-skip</span> ka og bahin sa pagkaon, ug gi-subsidize namo ang kulang para makaapil&nbsp;ka.</p>
 
       <div class="ladder">
-        <div class="lad"><span>Full experience</span><span class="pay">₱1,200</span><span class="off">at cost</span></div>
-        <div class="lad"><span>Cinderella — walay breakfast</span><span class="pay">₱900</span><span class="off">shorter stay</span></div>
-        <div class="lad"><span>Nightcrawler — walay dinner</span><span class="pay">₱900</span><span class="off">late entry</span></div>
-        <div class="lad"><span>From Sept 1 — last call</span><span class="pay">₱1,500</span><span class="off">books late</span></div>
+        <div class="lad"><span>Sunrise Chaser</span><span class="pay">₱1,200</span><span class="off">at cost</span></div>
+        <div class="lad"><span>Cinderella — walay breakfast</span><span class="pay">₱800</span><span class="off">shorter stay</span></div>
+        <div class="lad"><span>Nightcrawler — walay dinner</span><span class="pay">₱800</span><span class="off">late entry</span></div>
+        <div class="lad"><span>From Sept 1 — all&nbsp;packages</span><span class="pay">+₱200–300</span><span class="off">price goes up</span></div>
       </div>
     </div>
 
@@ -816,9 +894,9 @@ footer a{color:var(--amber)}
       </details>
       <details>
         <summary><span class="q">Unsa'y kalahian sa tulo ka&nbsp;packages?</span></summary>
-        <p><b>Full Experience (₱1,200)</b> — the whole 20 hours, Sat 3PM to Sun 11AM, dinner ug breakfast apil.<br>
-        <b>Cinderella (₱900)</b> — same 3PM start with dinner, pero <span class="nb">mo-uli</span> ka by 12AM. Walay&nbsp;breakfast.<br>
-        <b>Nightcrawler (₱900)</b> — 9PM pa ang entry, so walay dinner, pero apil na ang tagay, breakfast ug&nbsp;overnight.</p>
+        <p><b>Sunrise Chaser (₱1,200)</b> — the whole 20 hours, Sat 3PM to Sun 11AM, dinner ug breakfast apil.<br>
+        <b>Cinderella (₱800)</b> — same 3PM start with dinner, pero <span class="nb">mo-uli</span> ka by 12AM. Walay&nbsp;breakfast.<br>
+        <b>Nightcrawler (₱800)</b> — 9PM pa ang entry, so walay dinner, pero apil na ang tagay, breakfast ug&nbsp;overnight.</p>
       </details>
       <details>
         <summary><span class="q">Where exactly is the&nbsp;venue?</span></summary>
@@ -862,8 +940,8 @@ footer a{color:var(--amber)}
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span><span class="nb">Lapu-Lapu</span> City, Cebu ✦</span><span>From ₱900 · Until Aug 31 ✦</span><span>50 Slots Only ✦</span>
-    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span><span class="nb">Lapu-Lapu</span> City, Cebu ✦</span><span>From ₱900 · Until Aug 31 ✦</span><span>50 Slots Only ✦</span>
+    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span><span class="nb">Lapu-Lapu</span> City, Cebu ✦</span><span>From ₱800 Until Aug 31 ✦</span><span>50 Slots Only ✦</span>
+    <span>Sept 12–13, 2026 ✦</span><span>Saturday to Sunday ✦</span><span><span class="nb">Lapu-Lapu</span> City, Cebu ✦</span><span>From ₱800 Until Aug 31 ✦</span><span>50 Slots Only ✦</span>
   </div>
 </div>
 
@@ -884,7 +962,7 @@ footer a{color:var(--amber)}
 </footer>
 
 <div class="sticky-cta">
-  <span class="px"><b>From ₱900</b><span id="sticky-left">15 slots left</span></span>
+  <span class="px"><b>From ₱800</b><span id="sticky-left">15 slots left</span></span>
   <a href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">Apil Ko →</a>
 </div>
 
@@ -910,6 +988,17 @@ footer a{color:var(--amber)}
   else if (days === 1){ set('<span class="nb">u-days</span>', 1);    set('<span class="nb">u-days-label</span>', 'day to go'); }
   else if (days === 0){ set('<span class="nb">u-days</span>', 0);    set('<span class="nb">u-days-label</span>', 'happening now'); }
   else                { set('<span class="nb">u-days</span>', 0);    set('<span class="nb">u-days-label</span>', 'event has passed'); }
+
+  /* ---- theme toggle ---- */
+  var root=document.documentElement, btn=document.getElementById('theme-toggle'), icon=document.getElementById('theme-icon');
+  function paint(t){ if(icon) icon.textContent = (t==='light'?'☾':'☀');
+    if(btn) btn.setAttribute('aria-label', t==='light'?'Switch to dark theme':'Switch to light theme'); }
+  paint(root.getAttribute('data-theme'));
+  if(btn) btn.addEventListener('click',function(){
+    var t=root.getAttribute('data-theme')==='light'?'dark':'light';
+    root.setAttribute('data-theme',t); paint(t);
+    try{localStorage.setItem('theme',t);}catch(e){}
+  });
 })();
 </script>
 
