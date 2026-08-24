@@ -277,6 +277,8 @@ figure img{display:block;width:100%;height:100%;object-fit:cover}
 .u-days{text-align:center;padding-right:var(--s3);border-right:1px solid rgba(255,149,0,.35)}
 .u-days b{display:block;font-family:'Anton',Impact,sans-serif;font-size:2.6rem;color:var(--accent-t);line-height:.95}
 .u-days span{display:block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim);margin-top:4px;line-height:1.3}
+.u-days .u-clock{display:block;font-size:11px;letter-spacing:.06em;color:var(--cyan-t);
+  font-variant-numeric:tabular-nums;margin-top:4px;line-height:1.3}
 .u-slots b{display:block;font-family:'Anton',Impact,sans-serif;font-size:1.3rem;color:var(--fg);line-height:1.1;margin-bottom:9px}
 .u-bar{height:8px;background:var(--track);overflow:hidden;margin-bottom:9px}
 .u-bar i{display:block;height:100%;background:var(--amber);transition:width .6s ease}
@@ -536,11 +538,11 @@ document.documentElement.setAttribute('data-theme',t);})();</script>
     </dl>
 
     <div class="urgency">
-      <div class="u-days"><b id="u-days">25</b><span id="u-days-label">days to&nbsp;go</span></div>
+      <div class="u-days"><b id="u-days">25</b><span id="u-days-label">days to&nbsp;go</span><span class="u-clock" id="u-clock" aria-hidden="true">--:--:--</span></div>
       <div class="u-slots">
-        <b><span id="u-left">15</span> slots&nbsp;left</b>
-        <div class="u-bar"><i id="u-bar" style="width:70%"></i></div>
-        <span id="u-sold">35 of 50&nbsp;taken</span>
+        <b><span id="u-left">14</span> slots&nbsp;left</b>
+        <div class="u-bar"><i id="u-bar" style="width:72%"></i></div>
+        <span id="u-sold">36 of 50&nbsp;taken</span>
       </div>
     </div>
 
@@ -962,32 +964,49 @@ document.documentElement.setAttribute('data-theme',t);})();</script>
 </footer>
 
 <div class="sticky-cta">
-  <span class="px"><b>From ₱900</b><span id="sticky-left">15 slots left</span></span>
+  <span class="px"><b>From ₱900</b><span id="sticky-left">14 slots left</span></span>
   <a href="https://anonymous.fillout.com/anniv" target="_blank" rel="noopener noreferrer">Apil Ko →</a>
 </div>
 
 <script>
 (function(){
   /* ---- update SOLD as registrations come in; everything else follows ---- */
-  var SOLD = 35, TOTAL = 50;
-  var EVENT = '2026-09-12T00:00:00+08:00';   /* event day, Manila time */
+  var SOLD = 36, TOTAL = 50;
+  var EVENT = '2026-09-12T15:00:00+08:00';   /* 3PM check-in, Manila time */
 
   var left = Math.max(0, TOTAL - SOLD);
   var pct  = Math.max(0, Math.min(100, Math.round(SOLD / TOTAL * 100)));
 
   function set(id, txt){ var e = document.getElementById(id); if (e) e.textContent = txt; }
 
-  set('<span class="nb">u-left</span>', left);
-  set('<span class="nb">u-sold</span>', SOLD + ' of ' + TOTAL + ' taken');
-  set('<span class="nb">sticky-left</span>', left + (left === 1 ? ' slot left' : ' slots left'));
-  var bar = document.getElementById('<span class="nb">u-bar</span>');
+  set('u-left', left);
+  set('u-sold', SOLD + ' of ' + TOTAL + ' taken');
+  set('sticky-left', left + (left === 1 ? ' slot left' : ' slots left'));
+  var bar = document.getElementById('u-bar');
   if (bar) bar.style.width = pct + '%';
 
-  var days = Math.ceil((new Date(EVENT) - new Date()) / 86400000);
-  if (days > 1)       { set('<span class="nb">u-days</span>', days); set('<span class="nb">u-days-label</span>', 'days to go'); }
-  else if (days === 1){ set('<span class="nb">u-days</span>', 1);    set('<span class="nb">u-days-label</span>', 'day to go'); }
-  else if (days === 0){ set('<span class="nb">u-days</span>', 0);    set('<span class="nb">u-days-label</span>', 'happening now'); }
-  else                { set('<span class="nb">u-days</span>', 0);    set('<span class="nb">u-days-label</span>', 'event has passed'); }
+  /* live countdown: day headline plus a ticking hh:mm:ss beneath it */
+  var target = new Date(EVENT), clock = document.getElementById('u-clock'), timer;
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function tick(){
+    var ms = target - new Date();
+    if (ms <= 0){
+      set('u-days', 0);
+      set('u-days-label', 'happening now');
+      if (clock) clock.textContent = '';
+      if (timer) clearInterval(timer);
+      return;
+    }
+    var d = Math.floor(ms / 86400000), r = ms % 86400000;
+    var h = Math.floor(r / 3600000),
+        m = Math.floor((r % 3600000) / 60000),
+        sec = Math.floor((r % 60000) / 1000);
+    set('u-days', d);
+    set('u-days-label', d === 1 ? 'day to go' : 'days to go');
+    if (clock) clock.textContent = pad(h) + ':' + pad(m) + ':' + pad(sec);
+  }
+  tick();
+  timer = setInterval(tick, 1000);
 
   /* ---- theme toggle ---- */
   var root=document.documentElement, btn=document.getElementById('theme-toggle'), icon=document.getElementById('theme-icon');
