@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Welcome Kit — Anonymous Anniversary Adventure · Sept 12–13, 2026</title>
-<meta name="description" content="Your guide to the Anonymous Anniversary Adventure: venue, schedule, what to bring, and house rules.">
+<meta name="description" content="Your guide to the Anonymous Anniversary Adventure: how to get there, the schedule, what to bring, and the house rules.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,8 +25,8 @@
   --amber:#ff9500; --accent-t:#a35200; --cyan-t:#0a6f66;
   --inv-bg:#14120f; --inv-fg:#f4efe4;
 }
-:root{--s1:8px;--s2:16px;--s3:24px;--s4:40px;--s5:64px;--s6:88px;--gutter:24px;--max:820px}
-@media(max-width:760px){:root{--s4:32px;--s5:44px;--s6:56px;--gutter:20px}}
+:root{--s1:8px;--s2:16px;--s3:24px;--s4:40px;--s5:64px;--gutter:24px;--max:820px}
+@media(max-width:760px){:root{--s4:32px;--s5:44px;--gutter:20px}}
 
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
@@ -36,9 +36,8 @@ body{
   font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;
   overflow-x:hidden;hyphens:none;-webkit-hyphens:none;overflow-wrap:normal;
 }
-h1,h2,h3{font-family:'Anton',Impact,sans-serif;font-weight:400;line-height:.98;text-transform:uppercase}
-h1,h2,h3{text-wrap:balance}
-p,li,dd,summary{text-wrap:pretty}
+h1,h2,h3{font-family:'Anton',Impact,sans-serif;font-weight:400;line-height:.98;text-transform:uppercase;text-wrap:balance}
+p,li,dd,span{text-wrap:pretty}
 .nb{white-space:nowrap}
 a{color:inherit}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
@@ -54,7 +53,7 @@ section{padding:var(--s5) 0;border-top:1px solid var(--line)}
 .sec-intro{font-size:14.5px;color:var(--fg-dim);line-height:1.75;margin-bottom:var(--s4);max-width:56ch}
 
 /* ---------- header ---------- */
-header{padding:var(--s5) 0 var(--s5);text-align:center;position:relative}
+header{padding:var(--s5) 0;text-align:center;position:relative}
 header::before{
   content:"";position:absolute;top:-10%;left:50%;transform:translateX(-50%);
   width:min(760px,100%);height:380px;pointer-events:none;
@@ -69,7 +68,7 @@ header>*{position:relative}
 h1{font-size:clamp(2.6rem,13vw,5.4rem);margin-bottom:var(--s3)}
 h1 .out{color:transparent;-webkit-text-stroke:2px var(--fg);display:block}
 h1 .hl{color:var(--accent-t);display:block}
-.lede{font-size:15px;color:var(--fg-dim);max-width:44ch;margin:0 auto;line-height:1.75}
+.lede{font-size:15px;color:var(--fg-dim);max-width:46ch;margin:0 auto;line-height:1.75}
 
 .facts{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);margin-top:var(--s4)}
 .fact{padding:var(--s3) var(--s2);border-right:1px solid var(--line)}
@@ -91,17 +90,16 @@ h1 .hl{color:var(--accent-t);display:block}
   transition:transform .12s ease,box-shadow .12s ease;
 }
 .btn:hover,.btn:focus-visible{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--fg)}
-a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--cyan-t);outline-offset:3px}
+a:focus-visible,input:focus-visible{outline:3px solid var(--cyan-t);outline-offset:3px}
 
 /* ---------- info rows ---------- */
 .rows{border-top:1px solid var(--line)}
 .row{
-  display:grid;grid-template-columns:180px 1fr;gap:var(--s3);
+  display:grid;grid-template-columns:190px 1fr;gap:var(--s3);
   padding:var(--s3) 0;border-bottom:1px solid var(--line);align-items:baseline;
 }
 .row dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan-t);font-weight:700;line-height:1.5}
 .row dd{font-size:14.5px;line-height:1.7}
-.row dd small{display:block;font-size:12.5px;color:var(--fg-dim);margin-top:4px}
 @media(max-width:620px){.row{grid-template-columns:1fr;gap:4px}}
 
 /* ---------- schedule ---------- */
@@ -123,12 +121,9 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(
 .pool span{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim)}
 
 /* ---------- packing checklist ---------- */
-.pack{list-style:none;margin-top:var(--s2)}
+.pack{list-style:none;margin-top:var(--s1)}
 .pack li{border-bottom:1px solid var(--line)}
-.pack label{
-  display:flex;gap:14px;align-items:flex-start;padding:13px 2px;cursor:pointer;
-  font-size:14.5px;line-height:1.6;
-}
+.pack label{display:flex;gap:14px;align-items:flex-start;padding:12px 2px;cursor:pointer;font-size:14.5px;line-height:1.6}
 .pack input{
   appearance:none;-webkit-appearance:none;flex:0 0 20px;width:20px;height:20px;
   border:2px solid var(--fg-dim);background:transparent;cursor:pointer;margin-top:2px;
@@ -138,19 +133,35 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(
 .pack input:checked{background:var(--amber);border-color:var(--amber)}
 .pack input:checked::before{opacity:1}
 .pack input:checked + span{color:var(--fg-dim);text-decoration:line-through}
-.pack small{display:block;font-size:12.5px;color:var(--fg-dim);margin-top:3px}
+.pack small{display:block;font-size:12.5px;color:var(--fg-dim);margin-top:3px;text-decoration:none}
 .pack-head{
   font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-t);
-  font-weight:700;margin:var(--s4) 0 var(--s1);
+  font-weight:700;margin:var(--s4) 0 0;
 }
-.pack-head:first-of-type{margin-top:var(--s2)}
-.pack-note{font-size:12.5px;color:var(--fg-dim);margin-top:var(--s3);line-height:1.7}
+.pack-head:first-of-type{margin-top:0}
+.note{
+  border:1px solid var(--line);border-left:3px solid var(--amber);
+  padding:var(--s3);font-size:13.5px;color:var(--fg-dim);line-height:1.75;margin-top:var(--s3);
+}
+.note b{color:var(--fg)}
 
-/* ---------- house rules ---------- */
+/* ---------- vision ---------- */
+#vision{background:linear-gradient(180deg,rgba(44,232,216,.05),transparent 50%)}
+.vision-lead{font-size:clamp(1.2rem,3.4vw,1.5rem);line-height:1.55;margin-bottom:var(--s4);max-width:34ch}
+.vision-lead b{color:var(--cyan-t)}
+.vlist{list-style:none;border-top:1px solid var(--line)}
+.vlist li{
+  padding:var(--s3) 0 var(--s3) 34px;border-bottom:1px solid var(--line);
+  position:relative;font-size:14.5px;line-height:1.75;color:var(--fg-dim);
+}
+.vlist li::before{content:"\2192";position:absolute;left:0;top:var(--s3);color:var(--cyan-t);font-weight:700}
+.vlist b{color:var(--fg)}
+
+/* ---------- rules ---------- */
 .rules{counter-reset:r;list-style:none}
 .rules li{
   counter-increment:r;position:relative;padding:var(--s3) 0 var(--s3) 46px;
-  border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.75;
+  border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.75;color:var(--fg-dim);
 }
 .rules li::before{
   content:counter(r,decimal-leading-zero);position:absolute;left:0;top:var(--s3);
@@ -159,18 +170,24 @@ a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(
 .rules b{color:var(--fg)}
 #rules{background:linear-gradient(180deg,rgba(255,149,0,.05),transparent 45%)}
 
-/* ---------- callout ---------- */
-.note{
-  border:1px solid var(--line);border-left:3px solid var(--amber);
-  padding:var(--s3);font-size:14px;color:var(--fg-dim);line-height:1.75;margin-top:var(--s3);
+/* ---------- strictly not allowed ---------- */
+#nope{border-top:2px solid var(--amber)}
+.nope{list-style:none;border:1px solid var(--amber);margin-top:var(--s2)}
+.nope li{
+  position:relative;padding:var(--s3) var(--s3) var(--s3) 54px;
+  border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.75;color:var(--fg-dim);
 }
-.note b{color:var(--fg)}
+.nope li:last-child{border-bottom:0}
+.nope li::before{
+  content:"\2715";position:absolute;left:var(--s3);top:var(--s3);
+  color:var(--accent-t);font-weight:700;font-size:1.05rem;line-height:1.5;
+}
+.nope b{color:var(--fg)}
 
-/* ---------- footer ---------- */
+/* ---------- end ---------- */
 .end{text-align:center;background:var(--inv-bg);color:var(--inv-fg);padding:var(--s5) 0;border-top:0}
 .end h2{font-size:clamp(1.8rem,7vw,3rem);margin-bottom:var(--s2)}
-.end p{font-size:14.5px;margin-bottom:var(--s3);opacity:.75;line-height:1.7}
-.end a.tg{color:inherit;font-weight:700}
+.end p{font-size:14.5px;margin-bottom:var(--s3);opacity:.78;line-height:1.7;max-width:44ch;margin-left:auto;margin-right:auto}
 footer{padding:var(--s4) 0;text-align:center;font-size:11.5px;color:var(--fg-dim);letter-spacing:.1em;line-height:2.2}
 footer a{color:var(--accent-t)}
 
@@ -195,11 +212,11 @@ document.documentElement.setAttribute('data-theme',t);})();</script>
   <div class="wrap">
     <span class="kicker">Anonymous Cebu · Sept 12–13, 2026</span>
     <h1><span class="out">Welcome</span><span class="hl">Kit</span></h1>
-    <p class="lede">Everything you need for the weekend — asa, kanus-a, unsay dad-on, ug ang house rules. Save this page, bai.</p>
+    <p class="lede">Everything you need for the weekend — where to go, what happens when, what to bring, and how we treat each other. Save this&nbsp;page.</p>
 
     <dl class="facts">
-      <div class="fact"><dt>Check-in</dt><dd>Sat 3PM</dd></div>
-      <div class="fact"><dt>Check-out</dt><dd>Sun 11AM</dd></div>
+      <div class="fact"><dt>Check-in</dt><dd>From 3PM<br>Saturday</dd></div>
+      <div class="fact"><dt>Check-out</dt><dd>11AM<br>Sunday</dd></div>
       <div class="fact"><dt>Venue</dt><dd>Villa de&nbsp;Ciudad</dd></div>
       <div class="fact"><dt>Landmark</dt><dd>Gaisano Grand<br>Mall Mactan</dd></div>
     </dl>
@@ -211,14 +228,15 @@ document.documentElement.setAttribute('data-theme',t);})();</script>
   <div class="wrap">
     <p class="label"><span class="num">01</span> Getting there</p>
     <h2 class="sec-title">Villa de Ciudad</h2>
-    <p class="sec-intro">Lapu-Lapu City, Cebu. Ang landmark kay <b>Gaisano Grand Mall Mactan</b> — kung mangutana ka sa driver, mao na ang&nbsp;sultihi.</p>
+    <p class="sec-intro">Lapu-Lapu City, Cebu. The landmark is <b>Gaisano Grand Mall Mactan</b> — that's the one to tell your&nbsp;driver.</p>
 
     <p><a class="btn" href="https://maps.app.goo.gl/Fjpoyu2dHqy1Pe5V6" target="_blank" rel="noopener noreferrer">Open in Google Maps →</a></p>
 
     <dl class="rows" style="margin-top:var(--s4)">
-      <div class="row"><dt>By ride-hailing</dt><dd>Grab or Move It both work. Ipa-pin lang ang Google Maps link&nbsp;sa&nbsp;taas.</dd></div>
-      <div class="row"><dt>Sharing a ride</dt><dd>Check the <b>transpo channel</b> — daghang joiners ang nag-arrange og carpool. Mas barato ug mas&nbsp;sayon.</dd></div>
-      <div class="row"><dt>Arrival</dt><dd>Check-in opens <b>3PM Saturday</b>. Walay dali-dali — abot lang sa oras nga kaya&nbsp;nimo.</dd></div>
+      <div class="row"><dt>Arrive anytime</dt><dd>Check-in opens at 3PM, but there's no cut-off. Come whenever you can make&nbsp;it.</dd></div>
+      <div class="row"><dt>What to wear</dt><dd>Come in pajamas or a casual outfit — whatever is comfortable for the trip. You can change once you've settled&nbsp;in.</dd></div>
+      <div class="row"><dt>By ride-hailing</dt><dd>Grab and Move It both serve the area. Just paste the Google Maps link&nbsp;above.</dd></div>
+      <div class="row"><dt>Sharing a ride</dt><dd>Check the <b>transpo channel</b> — other joiners are arranging carpools. Cheaper, and you arrive already knowing&nbsp;someone.</dd></div>
     </dl>
   </div>
 </section>
@@ -227,18 +245,18 @@ document.documentElement.setAttribute('data-theme',t);})();</script>
 <section id="schedule">
   <div class="wrap">
     <p class="label"><span class="num">02</span> The schedule</p>
-    <h2 class="sec-title">Ang tibuok weekend.</h2>
-    <p class="sec-intro">Apil sa gusto nimo, pass sa dili. Walay&nbsp;mopugos.</p>
+    <h2 class="sec-title">How the weekend runs.</h2>
+    <p class="sec-intro">Join what you like, sit out what you don't. Nothing here is&nbsp;compulsory.</p>
 
     <div>
-      <div class="slot"><span class="slot-t">SAT 3:00 PM</span><span><b class="slot-n">Check-in</b><small class="slot-d">Abot, ibutang imong bag, kuha imong&nbsp;nametag.</small></span></div>
-      <div class="slot"><span class="slot-t">SAT 4:00 – 6:00 PM</span><span><b class="slot-n">Swimming</b><small class="slot-d">Abli na ang pool. Pinakasayon nga paagi&nbsp;makig-ila.</small></span></div>
-      <div class="slot"><span class="slot-t">SAT 6:00 – 8:00 PM</span><span><b class="slot-n">Dinner</b><small class="slot-d">Served at 6PM. Sabay tang&nbsp;mangaon.</small></span></div>
-      <div class="slot"><span class="slot-t">SAT 8:00 – 11:00 PM</span><span><b class="slot-n">Game Night 8.0</b><small class="slot-d">Outdoor games — apil ang pool, so andam na sa&nbsp;paglangoy.</small></span></div>
-      <div class="slot"><span class="slot-t">SAT 11PM – SUN 6AM</span><span><b class="slot-n">Tagay &amp; Chikahan</b><small class="slot-d">Ang main event. Puyat o tulog, ikaw&nbsp;bahala.</small></span></div>
-      <div class="slot"><span class="slot-t">SUN 6:00 – 8:00 AM</span><span><b class="slot-n">Breakfast</b><small class="slot-d">Served at 7AM. Init nga pagkaon ug&nbsp;sunrise.</small></span></div>
-      <div class="slot"><span class="slot-t">SUN 8:00 – 11:00 AM</span><span><b class="slot-n">Swimming</b><small class="slot-d">Last dip usa ta&nbsp;mo-uli.</small></span></div>
-      <div class="slot"><span class="slot-t">SUN 11:00 AM</span><span><b class="slot-n">Check-out</b><small class="slot-d">Hipusa imong gamit ug siguroha nga wala kay&nbsp;nabilin.</small></span></div>
+      <div class="slot"><span class="slot-t">SAT 3:00 PM</span><span><b class="slot-n">Check-in</b><small class="slot-d">Drop your bag, grab your nametag, settle&nbsp;in.</small></span></div>
+      <div class="slot"><span class="slot-t">SAT 4:00 – 6:00 PM</span><span><b class="slot-n">Swimming</b><small class="slot-d">Pool opens. The easiest way to meet&nbsp;people.</small></span></div>
+      <div class="slot"><span class="slot-t">SAT 6:00 – 8:00 PM</span><span><b class="slot-n">Dinner</b><small class="slot-d">Served at 6PM. We all eat&nbsp;together.</small></span></div>
+      <div class="slot"><span class="slot-t">SAT 8:00 – 11:00 PM</span><span><b class="slot-n">Game Night 8.0</b><small class="slot-d">Outdoor games, and some of them use the pool — so be ready to get&nbsp;wet.</small></span></div>
+      <div class="slot"><span class="slot-t">SAT 11PM – SUN 6AM</span><span><b class="slot-n">Tagay &amp; Chikahan</b><small class="slot-d">The main event. Stay up or turn in — your&nbsp;call.</small></span></div>
+      <div class="slot"><span class="slot-t">SUN 6:00 – 8:00 AM</span><span><b class="slot-n">Breakfast</b><small class="slot-d">Served at 7AM. Hot food and&nbsp;sunrise.</small></span></div>
+      <div class="slot"><span class="slot-t">SUN 8:00 – 11:00 AM</span><span><b class="slot-n">Swimming</b><small class="slot-d">One last dip before we head&nbsp;home.</small></span></div>
+      <div class="slot"><span class="slot-t">SUN 11:00 AM</span><span><b class="slot-n">Check-out</b><small class="slot-d">Pack up and double-check you've left nothing&nbsp;behind.</small></span></div>
     </div>
 
     <p class="label" style="margin-top:var(--s5)"><span class="num">02b</span> Pool hours</p>
@@ -246,7 +264,7 @@ document.documentElement.setAttribute('data-theme',t);})();</script>
       <div><b>3PM – 1AM</b><span>Saturday</span></div>
       <div><b>7AM – 11AM</b><span>Sunday</span></div>
     </div>
-    <p class="pack-note">Sirado ang pool gikan 1AM hangtod 7AM — mao na ang tagay ug chikahan&nbsp;time.</p>
+    <p class="note"><b>There is no lifeguard on duty.</b> Swim at your own risk. Please avoid rough play, diving, or anything that could lead to drowning — especially after a few&nbsp;drinks.</p>
   </div>
 </section>
 
@@ -254,27 +272,43 @@ document.documentElement.setAttribute('data-theme',t);})();</script>
 <section id="bring">
   <div class="wrap">
     <p class="label"><span class="num">03</span> What to bring</p>
-    <h2 class="sec-title">Imong packing list.</h2>
-    <p class="sec-intro">Tap to tick them off — magpabilin ang imong checklist sa phone&nbsp;nimo.</p>
+    <h2 class="sec-title">Your packing list.</h2>
+    <p class="sec-intro">Tap to tick items off — your list is saved on this&nbsp;phone.</p>
 
     <p class="pack-head">Essentials</p>
-    <ul class="pack" id="pack">
+    <ul class="pack">
+      <li><label><input type="checkbox" data-k="tumbler"><span>Tumbler<small>Refill it through the night instead of chasing cups</small></span></label></li>
       <li><label><input type="checkbox" data-k="towel"><span>Towel</span></label></li>
-      <li><label><input type="checkbox" data-k="water"><span>Water bottle</span></label></li>
-      <li><label><input type="checkbox" data-k="toilet"><span>Toiletries<small>Toothbrush, toothpaste, soap, shampoo, mouthwash</small></span></label></li>
       <li><label><input type="checkbox" data-k="slippers"><span>Slippers</span></label></li>
-      <li><label><input type="checkbox" data-k="pajama"><span>Pajama or sleepwear</span></label></li>
-      <li><label><input type="checkbox" data-k="swim"><span>Swimwear<small>Duha ka set kung kaya — basa pa ang una pagkabuntag</small></span></label></li>
-      <li><label><input type="checkbox" data-k="meds"><span>Medicines<small>Especially kung naay allergy ka, o dali ka mahubog</small></span></label></li>
+      <li><label><input type="checkbox" data-k="swim"><span>Swimwear<small>One set is enough</small></span></label></li>
+      <li><label><input type="checkbox" data-k="pajama"><span>Pajamas or sleepwear</span></label></li>
+      <li><label><input type="checkbox" data-k="clothes"><span>Extra clothes</span></label></li>
+      <li><label><input type="checkbox" data-k="plastic"><span>Plastic bag<small>For your wet clothes on the way home</small></span></label></li>
+    </ul>
+
+    <p class="pack-head">Toiletries</p>
+    <ul class="pack">
+      <li><label><input type="checkbox" data-k="brush"><span>Toothbrush</span></label></li>
+      <li><label><input type="checkbox" data-k="paste"><span>Toothpaste</span></label></li>
+      <li><label><input type="checkbox" data-k="soap"><span>Soap</span></label></li>
+      <li><label><input type="checkbox" data-k="shampoo"><span>Shampoo</span></label></li>
+      <li><label><input type="checkbox" data-k="mouth"><span>Mouthwash</span></label></li>
+      <li><label><input type="checkbox" data-k="deo"><span>Deodorant</span></label></li>
+    </ul>
+
+    <p class="pack-head">Health</p>
+    <ul class="pack">
+      <li><label><input type="checkbox" data-k="meds"><span>Your medicines<small>Especially if you have allergies, or if you get drunk easily</small></span></label></li>
     </ul>
 
     <p class="pack-head">Optional</p>
-    <ul class="pack" id="pack2">
+    <ul class="pack">
       <li><label><input type="checkbox" data-k="board"><span>Board games</span></label></li>
       <li><label><input type="checkbox" data-k="cards"><span>Card games</span></label></li>
-      <li><label><input type="checkbox" data-k="foam"><span>Foam or tent<small>Kung walay ka bedspace — tan-awa ang sleeping section sa ubos</small></span></label></li>
+      <li><label><input type="checkbox" data-k="foam"><span>Foam or tent<small>If you don't have a bedspace — see the sleeping section below</small></span></label></li>
     </ul>
-    <p class="pack-note">Ang dinner, breakfast, tagay ug pulutan, apil na tanan. Dili na nimo kinahanglan mo-dala og&nbsp;pagkaon.</p>
+
+    <p class="note">Dinner, breakfast, tagay and pulutan are all covered. You don't need to bring&nbsp;food.</p>
   </div>
 </section>
 
@@ -282,43 +316,73 @@ document.documentElement.setAttribute('data-theme',t);})();</script>
 <section id="sleeping">
   <div class="wrap">
     <p class="label"><span class="num">04</span> Sleeping</p>
-    <h2 class="sec-title">Tulog is optional.</h2>
-    <p class="sec-intro">Take a nap whenever you need one — walay schedule, walay&nbsp;mag-ihap.</p>
+    <h2 class="sec-title">Sleep is optional.</h2>
+    <p class="sec-intro">Nap whenever you need one. Nobody is keeping&nbsp;score.</p>
 
     <dl class="rows">
-      <div class="row"><dt>May bedspace</dt><dd>Naa na kay reserved nga higdaanan. Sold out na tanan ang&nbsp;bedspaces.</dd></div>
-      <div class="row"><dt>Walay bedspace</dt><dd>Ang <b>sofa sa main area</b> is open to everyone for quick&nbsp;naps.</dd></div>
-      <div class="row"><dt>Mas komportable</dt><dd>Pwede ka <span class="nb">mo-dala</span> og kaugalingong <b>foam or tent</b>. Daghang space sa&nbsp;gawas.</dd></div>
+      <div class="row"><dt>With a bedspace</dt><dd>Your bed is reserved. All bedspaces are sold&nbsp;out.</dd></div>
+      <div class="row"><dt>Without one</dt><dd>The <b>sofas in the main area</b> are open to everyone for quick&nbsp;naps.</dd></div>
+      <div class="row"><dt>More comfort</dt><dd>Bring your own <b>foam or tent</b> if you'd rather have your own space. There's plenty of room&nbsp;outside.</dd></div>
     </dl>
+  </div>
+</section>
+
+<!-- ============ VISION ============ -->
+<section id="vision">
+  <div class="wrap">
+    <p class="label"><span class="num">05</span> Why we're doing this</p>
+    <h2 class="sec-title">Come to make a friend.</h2>
+    <p class="vision-lead">The point of this weekend is simple: <b>connect and make new friends.</b></p>
+
+    <ul class="vlist">
+      <li><b>We want everyone to know each other by name.</b> That's the entire reason for the nametags — not a formality, the whole&nbsp;idea.</li>
+      <li><b>This is not an orgy party.</b> It isn't a place to hook up and leave. If that's what you came for, this isn't your&nbsp;event.</li>
+      <li><b>We're reimagining what <span class="nb">#altercebu</span> can be.</b> A community built on friendship first, where people actually know each&nbsp;other.</li>
+      <li><b>Come in ready to talk to someone new.</b> That's all we're asking. Everything else follows from&nbsp;that.</li>
+    </ul>
   </div>
 </section>
 
 <!-- ============ HOUSE RULES ============ -->
 <section id="rules">
   <div class="wrap">
-    <p class="label"><span class="num">05</span> House rules</p>
-    <h2 class="sec-title">Basaha ni usa ka moadto.</h2>
-    <p class="sec-intro">Pito ka rules. Sayon ra tanan, pero seryoso mi&nbsp;ani.</p>
+    <p class="label"><span class="num">06</span> House rules</p>
+    <h2 class="sec-title">Read this before you come.</h2>
+    <p class="sec-intro">Seven rules. All easy — but we take them&nbsp;seriously.</p>
 
     <ol class="rules">
-      <li><b>Wear your nametag at all times.</b> Ang goal, makaila ang tanan nimo pinaagi sa imong ngalan. Tawga pod ang uban base sa ngalan sa ilang&nbsp;nametag.</li>
-      <li><b>Participate when you can</b> — pero boluntaryo tanan ang games. Walay pressure kung dili ka&nbsp;ganahan.</li>
-      <li><b>Safe space ni para sa tanan.</b> <span class="nb">Friendship-first</span> ni nga event, so come in eager to make a&nbsp;connection.</li>
-      <li><b>This is not an orgy.</b> Kung kinahanglan gyud, keep intimate acts minimal ug&nbsp;private.</li>
-      <li><b>Respect everyone's personal space.</b> Always ask for consent. Ang sexual harassment, atubangon jud namo&nbsp;dayon.</li>
-      <li><b>Communal ang tanan nga toilets ug bath tubs.</b> Ayaw pag-overstay. Kung sobra sa usa ka tawo ang sulod, ang <b>pag-lock sa pultahan kay major offense</b>.</li>
-      <li><b>Naay incident o concern?</b> Sultihi dayon bisan kinsa nga organizer. Ayaw pagpanuko — mao na mi&nbsp;naa.</li>
+      <li><b>Wear your nametag at all times.</b> The goal is for everyone to know you by your name. Call others by the name on their nametag&nbsp;too.</li>
+      <li><b>Join in when you can</b> — but every game is voluntary. No pressure if you'd rather sit one&nbsp;out.</li>
+      <li><b>This is a safe space for everyone.</b> It's a friendship-first event, so come in eager to make a&nbsp;connection.</li>
+      <li><b>This is not an orgy.</b> If it comes up at all, keep intimate acts minimal and&nbsp;private.</li>
+      <li><b>Respect everyone's personal space.</b> Always ask for consent. Sexual harassment will be dealt with&nbsp;accordingly.</li>
+      <li><b>Toilets and bathtubs are communal.</b> Don't overstay. If more than one person is inside, <b>locking the door is a major offense</b>.</li>
+      <li><b>Something wrong? Tell an organizer immediately.</b> Any incident, any concern — don't sit on it. That's what we're here&nbsp;for.</li>
     </ol>
+  </div>
+</section>
 
-    <p class="note"><b>Bottom line:</b> mangaon, magdula, magstorya, ug mag-uli tanan nga safe ug ganahan mobalik. Mao ra jud&nbsp;na.</p>
+<!-- ============ NOT ALLOWED ============ -->
+<section id="nope">
+  <div class="wrap">
+    <p class="label"><span class="num">07</span> Strictly not allowed</p>
+    <h2 class="sec-title">No exceptions on these.</h2>
+    <p class="sec-intro">These four aren't negotiable, and they protect everyone&nbsp;here.</p>
+
+    <ul class="nope">
+      <li><b>No drugs.</b> Anyone bringing or using drugs will be <b>reported to the authorities immediately</b>. No warnings, no&nbsp;discussion.</li>
+      <li><b>No smoking or vaping inside the house.</b> That includes the sala, the rooms, and every indoor area. Step outside&nbsp;instead.</li>
+      <li><b>No unregistered +1 guests.</b> Walk-ins are not allowed. Everyone at the venue must be a confirmed, registered&nbsp;joiner.</li>
+      <li><b>No unsafe swimming.</b> There is no lifeguard on duty, so avoid extreme or rough activity in the pool — particularly after&nbsp;drinking.</li>
+    </ul>
   </div>
 </section>
 
 <!-- ============ HELP ============ -->
 <section class="end">
   <div class="wrap">
-    <h2>Naay Pangutana?</h2>
-    <p>Message <a class="tg" href="https://t.me/mattkilig" target="_blank" rel="noopener noreferrer">@mattkilig</a> on Telegram, or reach out to any organizer sa event.</p>
+    <h2>Questions?</h2>
+    <p>Message <b><a href="https://t.me/mattkilig" target="_blank" rel="noopener noreferrer">@mattkilig</a></b> on Telegram, or talk to any organizer once you're at the venue.</p>
     <p style="opacity:1;margin-bottom:0"><a class="btn" href="https://t.me/mattkilig" target="_blank" rel="noopener noreferrer">Message on Telegram →</a></p>
   </div>
 </section>
