@@ -204,6 +204,25 @@ a:focus-visible,input:focus-visible{outline:3px solid var(--cyan-t);outline-offs
 }
 .nope b{color:var(--fg)}
 
+
+/* ---------- sub-points inside a rule ---------- */
+.rules .sub{
+  display:block;margin-top:10px;padding-left:14px;
+  border-left:2px solid var(--line);font-size:13.5px;line-height:1.7;
+}
+.rules .sub a{color:var(--cyan-t);font-weight:700}
+
+/* ---------- waiver ---------- */
+#waiver{background:linear-gradient(180deg,rgba(20,18,15,.25),transparent 40%)}
+.waiver{list-style:none;border-top:1px solid var(--line)}
+.waiver li{
+  position:relative;padding:var(--s3) 0 var(--s3) 30px;border-bottom:1px solid var(--line);
+  font-size:13.5px;line-height:1.8;color:var(--fg-dim);
+}
+.waiver li::before{content:"\2014";position:absolute;left:0;top:var(--s3);color:var(--fg-dim)}
+.waiver b{color:var(--fg)}
+.waiver a{color:var(--cyan-t);font-weight:700}
+
 /* ---------- end ---------- */
 .end{text-align:center;background:var(--inv-bg);color:var(--inv-fg);padding:var(--s5) 0;border-top:0}
 .end h2{font-size:clamp(1.8rem,7vw,3rem);margin-bottom:var(--s2)}
@@ -390,18 +409,36 @@ document.documentElement.setAttribute('data-theme',t);})();</script>
 <section id="rules">
   <div class="wrap">
     <p class="label"><span class="num">07</span> House rules</p>
-    <h2 class="sec-title">Read this before you come.</h2>
-    <p class="sec-intro">Seven rules. All easy — but we take them&nbsp;seriously.</p>
+    <h2 class="sec-title">Five rules. That's it.</h2>
+    <p class="sec-intro">All of them are easy. This is a <b>safe space for everyone</b>, and these five rules are how we keep it that&nbsp;way.</p>
 
     <ol class="rules">
-      <li><b>Wear your nametag at all times.</b> The goal is for everyone to know you by your name. Call others by the name on their nametag&nbsp;too.</li>
-      <li><b>Join in when you can</b> — but every game is voluntary. No pressure if you'd rather sit one&nbsp;out.</li>
-      <li><b>This is a safe space for everyone.</b> It's a friendship-first event, so come in eager to make a&nbsp;connection.</li>
-      <li><b>This is not an orgy.</b> If it comes up at all, keep intimate acts minimal and&nbsp;private.</li>
-      <li><b>Respect everyone's personal space.</b> Always ask for consent. Sexual harassment will be dealt with&nbsp;accordingly.</li>
-      <li><b>Toilets and bathtubs are communal.</b> Don't overstay. If more than one person is inside, <b>locking the door is a major offense</b>.</li>
-      <li><b>Something wrong? Tell an organizer immediately.</b> Any incident, any concern — don't sit on it. That's what we're here&nbsp;for.</li>
+      <li>
+        <b>Wear your nametag the whole time.</b>
+        The goal is for everyone to know you by your name — that's the entire point of the weekend. Call other people by the name on their tag&nbsp;too.
+      </li>
+      <li>
+        <b>Everything here is voluntary.</b>
+        Join the games when you feel like it and sit out when you don't. Same with swimming, and same with sleep. Nobody is keeping&nbsp;score.
+      </li>
+      <li>
+        <b>Consent, every time.</b>
+        Respect everyone's personal space and always ask first. Sexual harassment will be dealt with accordingly.
+        <span class="sub">This is not an orgy. If intimacy comes up at all, keep it minimal and&nbsp;private.</span>
+      </li>
+      <li>
+        <b>Ask before you take photos.</b>
+        Get the person's consent before any photo or video — and avoid posting them publicly afterwards.
+        <span class="sub">If you want to share something, ask the people in it first. Not everyone here is out, and not everyone wants to be&nbsp;findable.</span>
+      </li>
+      <li>
+        <b>Share the space.</b>
+        Toilets and bathtubs are communal, so don't overstay. If more than one person is inside, <b>locking the door is a major offense</b>.
+        <span class="sub">Clean as you go, and look after the place — see <a href="#claygo">Taking care of the place</a>.</span>
+      </li>
     </ol>
+
+    <p class="note"><b>Something wrong? Tell an organizer immediately.</b> Any incident, any concern, however small — don't sit on it. Someone from the team is on-site the whole 20&nbsp;hours.</p>
   </div>
 </section>
 
@@ -418,6 +455,27 @@ document.documentElement.setAttribute('data-theme',t);})();</script>
       <li><b>No unregistered +1 guests.</b> Walk-ins are not allowed. Everyone at the venue must be a confirmed, registered&nbsp;joiner.</li>
       <li><b>No unsafe swimming.</b> There is no lifeguard on duty, so avoid extreme or rough activity in the pool — particularly after&nbsp;drinking.</li>
     </ul>
+  </div>
+</section>
+
+<!-- ============ WAIVER ============ -->
+<section id="waiver">
+  <div class="wrap">
+    <p class="label"><span class="num">09</span> Waiver</p>
+    <h2 class="sec-title">Joining is at your own risk.</h2>
+    <p class="sec-intro">Please read this before you come. By registering for and attending the event, you agree to the&nbsp;following.</p>
+
+    <ul class="waiver">
+      <li>You take part in every activity — swimming, games, tagay, and everything else — <b>voluntarily and at your own&nbsp;risk</b>.</li>
+      <li>The <b>organizers, the hosts, and the venue are not liable</b> for any accident, personal injury, illness, or death occurring before, during, or after the&nbsp;event.</li>
+      <li><b>There is no lifeguard on duty.</b> You swim entirely at your own risk, and you accept the added risk of swimming after&nbsp;drinking.</li>
+      <li>You are responsible for <b>your own belongings</b>. Nobody is liable for anything lost, stolen, or&nbsp;damaged.</li>
+      <li>You are responsible for <b>your own health</b> — your medication, your allergies, and how much you choose to&nbsp;drink.</li>
+      <li>You are responsible for <b>any damage you cause</b>, as set out in <a href="#claygo">Taking care of the&nbsp;place</a>.</li>
+      <li>If you have a condition that swimming, alcohol, or a night without sleep could affect, <b>tell an organizer before the event</b>.</li>
+    </ul>
+
+    <p class="note">Attending the event means you accept these terms. If anything here doesn't sit right with you, message an organizer before Sept&nbsp;9.</p>
   </div>
 </section>
 
